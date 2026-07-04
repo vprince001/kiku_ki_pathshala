@@ -1,7 +1,7 @@
 import { LongVideo } from "../components/LongVideo";
 import { getCategory, getLongDuration } from "../helpers";
 
-const category = getCategory("farmAnimals", "15-farm-animal-names-v1");
+const category = getCategory("farmAnimalLong");
 
 export const VIDEO_CONFIG = {
   showIntro: false,
@@ -10,11 +10,15 @@ export const VIDEO_CONFIG = {
   showHindi: true,
   showTimer: true,
   showCorrect: false,
+  showLearning: true,
+  showFact: false,
+  showSong: true,
   showMilestone: true,
-  showCompletion: true,
+  showCompletion: false,
   showOutro: true,
-  milestones: [5],
+  milestones: [5, 10, 15, 20],
 };
+
 
 export const FarmAnimalLongDuration =
   getLongDuration(category.items, VIDEO_CONFIG);

@@ -1,15 +1,15 @@
 import { AnimalLong, AnimalLongDuration } from "../videos/AnimalLong";
-import { BirdLong, BirdLongDuration } from "../videos/BirdLong";
-import { DinosaurLong, DinosaurLongDuration } from "../videos/DinosaurLong";
+// import { BirdLong, BirdLongDuration } from "../videos/BirdLong";
+// import { DinosaurLong, DinosaurLongDuration } from "../videos/DinosaurLong";
 import { FarmAnimalLong, FarmAnimalLongDuration } from "../videos/FarmAnimalLong";
-import { FoodIemLongDuration, FoodItemLong } from "../videos/FoodItemLong";
-import { FruitLong, FruitLongDuration } from "../videos/FruitLong";
-import { InsectLong, InsectLongDuration } from "../videos/InsectLong";
-import { PetAnimalLong, PetAnimalLongDuration } from "../videos/PetAnimalLong";
+// import { FoodIemLongDuration, FoodItemLong } from "../videos/FoodItemLong";
+// import { FruitLong, FruitLongDuration } from "../videos/FruitLong";
+// import { InsectLong, InsectLongDuration } from "../videos/InsectLong";
 // import { PetAnimalLong, PetAnimalLongDuration } from "../videos/PetAnimalLong";
-import { SeaAnimalLong, SeaAnimalLongDuration } from "../videos/SeaAnimalLong";
-import { ToyLong, ToyLongDuration } from "../videos/ToyLong";
-import { WildAnimalLong, WildAnimalLongDuration } from "../videos/WildAnimalLong";
+// import { PetAnimalLong, PetAnimalLongDuration } from "../videos/PetAnimalLong";
+// import { SeaAnimalLong, SeaAnimalLongDuration } from "../videos/SeaAnimalLong";
+// import { ToyLong, ToyLongDuration } from "../videos/ToyLong";
+// import { WildAnimalLong, WildAnimalLongDuration } from "../videos/WildAnimalLong";
 
 const VIDEO_CONFIG_SHORT = {
     FPS: 30,
@@ -37,24 +37,24 @@ export const VIDEO_CONFIG = {
 // ------------------------------------------------------------------------------------ //
 
 // Fruits
-export const FruitLongConfig = {
-  id: "FruitLong",
-  component: FruitLong,
-  durationInFrames: FruitLongDuration,
-  fps: VIDEO_CONFIG_LONG.FPS,
-  width: VIDEO_CONFIG_LONG.WIDTH,
-  height: VIDEO_CONFIG_LONG.HEIGHT,
-};
+// export const FruitLongConfig = {
+//   id: "FruitLong",
+//   component: FruitLong,
+//   durationInFrames: FruitLongDuration,
+//   fps: VIDEO_CONFIG_LONG.FPS,
+//   width: VIDEO_CONFIG_LONG.WIDTH,
+//   height: VIDEO_CONFIG_LONG.HEIGHT,
+// };
 
 // Birds
-export const BirdLongConfig = {
-  id: "BirdLong",
-  component: BirdLong,
-  durationInFrames: BirdLongDuration,
-  fps: VIDEO_CONFIG_LONG.FPS,
-  width: VIDEO_CONFIG_LONG.WIDTH,
-  height: VIDEO_CONFIG_LONG.HEIGHT,
-};
+// export const BirdLongConfig = {
+//   id: "BirdLong",
+//   component: BirdLong,
+//   durationInFrames: BirdLongDuration,
+//   fps: VIDEO_CONFIG_LONG.FPS,
+//   width: VIDEO_CONFIG_LONG.WIDTH,
+//   height: VIDEO_CONFIG_LONG.HEIGHT,
+// };
 
 // Shapes
 // export const ShapeShortConfig = {
@@ -187,14 +187,14 @@ export const BirdLongConfig = {
 //   height: VIDEO_CONFIG_SHORT.HEIGHT,
 // };
 
-export const InsectLongConfig = {
-  id: "InsectLong",
-  component: InsectLong,
-  durationInFrames: InsectLongDuration,
-  fps: VIDEO_CONFIG_LONG.FPS,
-  width: VIDEO_CONFIG_LONG.WIDTH,
-  height: VIDEO_CONFIG_LONG.HEIGHT,
-};
+// export const InsectLongConfig = {
+//   id: "InsectLong",
+//   component: InsectLong,
+//   durationInFrames: InsectLongDuration,
+//   fps: VIDEO_CONFIG_LONG.FPS,
+//   width: VIDEO_CONFIG_LONG.WIDTH,
+//   height: VIDEO_CONFIG_LONG.HEIGHT,
+// };
 
 // Farm Animals
 // export const FarmAnimalShortConfig = {
@@ -209,31 +209,31 @@ export const InsectLongConfig = {
 export const FarmAnimalLongConfig = {
   id: "FarmAnimalLong",
   component: FarmAnimalLong,
-  durationInFrames: 7795,
+  durationInFrames: FarmAnimalLongDuration,
   fps: VIDEO_CONFIG_LONG.FPS,
   width: VIDEO_CONFIG_LONG.WIDTH,
   height: VIDEO_CONFIG_LONG.HEIGHT,
 };
 
 // Sea Animals
-export const SeaAnimalLongConfig = {
-  id: "SeaAnimalLong",
-  component: SeaAnimalLong,
-  durationInFrames: SeaAnimalLongDuration,
-  fps: VIDEO_CONFIG_LONG.FPS,
-  width: VIDEO_CONFIG_LONG.WIDTH,
-  height: VIDEO_CONFIG_LONG.HEIGHT,
-};
+// export const SeaAnimalLongConfig = {
+//   id: "SeaAnimalLong",
+//   component: SeaAnimalLong,
+//   durationInFrames: SeaAnimalLongDuration,
+//   fps: VIDEO_CONFIG_LONG.FPS,
+//   width: VIDEO_CONFIG_LONG.WIDTH,
+//   height: VIDEO_CONFIG_LONG.HEIGHT,
+// };
 
 // Wild Animals
-export const WildAnimalLongConfig = {
-  id: "WildAnimalLong",
-  component: WildAnimalLong,
-  durationInFrames: WildAnimalLongDuration,
-  fps: VIDEO_CONFIG_LONG.FPS,
-  width: VIDEO_CONFIG_LONG.WIDTH,
-  height: VIDEO_CONFIG_LONG.HEIGHT,
-};
+// export const WildAnimalLongConfig = {
+//   id: "WildAnimalLong",
+//   component: WildAnimalLong,
+//   durationInFrames: WildAnimalLongDuration,
+//   fps: VIDEO_CONFIG_LONG.FPS,
+//   width: VIDEO_CONFIG_LONG.WIDTH,
+//   height: VIDEO_CONFIG_LONG.HEIGHT,
+// };
 
 // School Objects
 // export const SchoolObjectLongConfig = {
@@ -266,14 +266,14 @@ export const WildAnimalLongConfig = {
 // };
 
 // Food Items
-export const FoodItemsLongConfig = {
-  id: "FoodItemsLong",
-  component: FoodItemLong,
-  durationInFrames: FoodIemLongDuration,
-  fps: VIDEO_CONFIG_LONG.FPS,
-  width: VIDEO_CONFIG_LONG.WIDTH,
-  height: VIDEO_CONFIG_LONG.HEIGHT,
-};
+// export const FoodItemsLongConfig = {
+//   id: "FoodItemsLong",
+//   component: FoodItemLong,
+//   durationInFrames: FoodIemLongDuration,
+//   fps: VIDEO_CONFIG_LONG.FPS,
+//   width: VIDEO_CONFIG_LONG.WIDTH,
+//   height: VIDEO_CONFIG_LONG.HEIGHT,
+// };
 
 // Places Around Us
 // export const PlacesAroundUsConfig = {
@@ -286,24 +286,24 @@ export const FoodItemsLongConfig = {
 // };
 
 // Toys
-export const ToysLongConfig = {
-  id: "ToysLong",
-  component: ToyLong,
-  durationInFrames: ToyLongDuration,
-  fps: VIDEO_CONFIG_LONG.FPS,
-  width: VIDEO_CONFIG_LONG.WIDTH,
-  height: VIDEO_CONFIG_LONG.HEIGHT,
-};
+// export const ToysLongConfig = {
+//   id: "ToysLong",
+//   component: ToyLong,
+//   durationInFrames: ToyLongDuration,
+//   fps: VIDEO_CONFIG_LONG.FPS,
+//   width: VIDEO_CONFIG_LONG.WIDTH,
+//   height: VIDEO_CONFIG_LONG.HEIGHT,
+// };
 
 // Dinosaurs
-export const DinosaursLongConfig = {
-  id: "DinosaurLong",
-  component: DinosaurLong,
-  durationInFrames: 10875,
-  fps: VIDEO_CONFIG_LONG.FPS,
-  width: VIDEO_CONFIG_LONG.WIDTH,
-  height: VIDEO_CONFIG_LONG.HEIGHT,
-};
+// export const DinosaursLongConfig = {
+//   id: "DinosaurLong",
+//   component: DinosaurLong,
+//   durationInFrames: 10875,
+//   fps: VIDEO_CONFIG_LONG.FPS,
+//   width: VIDEO_CONFIG_LONG.WIDTH,
+//   height: VIDEO_CONFIG_LONG.HEIGHT,
+// };
 
 // Animals
 export const AnimalLongConfig = {
@@ -316,11 +316,11 @@ export const AnimalLongConfig = {
 };
 
 // Pet Animals
-export const PetAnimalLongConfig = {
-  id: "PetAnimalLong",
-  component: PetAnimalLong,
-  durationInFrames: PetAnimalLongDuration,
-  fps: VIDEO_CONFIG_LONG.FPS,
-  width: VIDEO_CONFIG_LONG.WIDTH,
-  height: VIDEO_CONFIG_LONG.HEIGHT,
-};
+// export const PetAnimalLongConfig = {
+//   id: "PetAnimalLong",
+//   component: PetAnimalLong,
+//   durationInFrames: PetAnimalLongDuration,
+//   fps: VIDEO_CONFIG_LONG.FPS,
+//   width: VIDEO_CONFIG_LONG.WIDTH,
+//   height: VIDEO_CONFIG_LONG.HEIGHT,
+// };

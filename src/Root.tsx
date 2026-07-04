@@ -5,10 +5,10 @@ import {
   AnimalLongConfig,
 
   // Fruits
-  FruitLongConfig,
+  // FruitLongConfig,
 
   // Birds
-  BirdLongConfig,
+  // BirdLongConfig,
 
   // Colour
   // ColourShortConfig,
@@ -32,7 +32,7 @@ import {
   // BodyPartReelConfig,
 
   // Insects
-  InsectLongConfig,
+  // InsectLongConfig,
   // InsectShortConfig,
   // InsectReelConfig,
 
@@ -41,10 +41,10 @@ import {
   // FarmAnimalShortConfig,
 
   // Sea Animals
-  SeaAnimalLongConfig,
+  // SeaAnimalLongConfig,
 
   // Wild Animals
-  WildAnimalLongConfig,
+  // WildAnimalLongConfig,
 
   // School Objects
   // SchoolObjectLongConfig,
@@ -56,21 +56,21 @@ import {
   // CommunityHelperLongConfig,
 
   // Food Items
-  FoodItemsLongConfig,
+  // FoodItemsLongConfig,
 
   // Places Around Us
   // PlacesAroundUsConfig,
 
   // Toys
-  ToysLongConfig,
+  // ToysLongConfig,
 
   // Dinosaurs
-  DinosaursLongConfig,
+  // DinosaursLongConfig,
 
   // Pet Animals
-  PetAnimalLongConfig
+  // PetAnimalLongConfig
 } from "./config";
 
 export const RemotionRoot = () => {
-  return <Composition { ...PetAnimalLongConfig} />;
+  return <Composition { ...FarmAnimalLongConfig} />;
 };

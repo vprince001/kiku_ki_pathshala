@@ -39,7 +39,7 @@ export const assets = {
       staticFile(`videos/${folder}/audio/question.mp3`),
 
     briefAudio: (folder: string, itemCount: number) =>
-      staticFile(`videos/${folder}/audio/brief_10.mp3`),
+      staticFile(`videos/${folder}/audio/brief_${itemCount}.mp3`),
 
     milestoneAudio: (folder: string) =>
       staticFile(`videos/${folder}/audio/milestone_5.mp3`),
@@ -72,6 +72,10 @@ export const assets = {
 
     pointing: staticFile(`shared/kiku/pointing.webm`),
 
+    pointingPreview: staticFile(`shared/kiku/pointing.webp`),
+
     happy: staticFile(`shared/kiku/happy.webm`),
+
+    happyPreview: staticFile(`shared/kiku/happy.webp`),
   },
 };

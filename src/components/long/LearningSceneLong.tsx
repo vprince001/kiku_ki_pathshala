@@ -15,6 +15,7 @@ import { ObjectImage } from "../shared/ObjectImage";
 import { LearningBoard } from "./LearningBoard";
 import { TimerBox } from "../shared/TimerBox";
 import { assets } from "../../data/assets";
+import { KikuAnimation } from "../shared/KikuAnimation";
 
 type LearningSceneLongProps = {
     image: string;
@@ -98,8 +99,8 @@ export const LearningSceneLong = ({
                 />
 
                 {/* Kiku Pointing */}
-                <OffthreadVideo
-                    src={assets.shared.pointing}
+                <KikuAnimation
+                    webm={assets.shared.pointing}
                     style={{
                         position: "absolute",
                         bottom: getTransitionEffect(frame, [0, -40]),
@@ -108,7 +109,6 @@ export const LearningSceneLong = ({
                         zIndex: 999,
                     }}
                     volume={0.50}
-                    transparent
                 />
 
                 {/* Narration */}

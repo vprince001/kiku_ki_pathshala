@@ -1,0 +1,48 @@
+{
+  version: 2,
+  mediaFileName: '14-20 Farm Animal Names.mp3',
+  cutSegments: [
+    {
+      start: 4.023423817952474,
+      end: 4.828108581542969,
+      name: 'buffalo',
+      selected: true,
+    },
+    {
+      start: 11.475828368019313,
+      end: 12.415402485044053,
+      name: 'turkey',
+      selected: true,
+    },
+    {
+      start: 19.369180654637518,
+      end: 20.11339777703335,
+      name: 'llama',
+      selected: true,
+    },
+    {
+      start: 27.40486662352582,
+      end: 28.206256,
+      name: 'yak',
+      selected: true,
+    },
+    {
+      start: 34.73819427639743,
+      end: 35.547494,
+      name: 'ox',
+      selected: true,
+    },
+    {
+      start: 42.429678690592446,
+      end: 43.372972984761,
+      name: 'rooster',
+      selected: true,
+    },
+    {
+      start: 50.69235110892853,
+      end: 51.52494401460886,
+      name: '',
+      selected: true,
+    },
+  ],
+}

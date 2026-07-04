@@ -7,6 +7,8 @@ import {
 } from "remotion";
 import { assets } from "../../data/assets";
 import { getResponsiveFontSize } from "../../helpers";
+import { Entity } from "../../data/types";
+import { KikuAnimation } from "../shared/KikuAnimation";
 
 
 type SongSceneLongProps = {
@@ -16,6 +18,7 @@ type SongSceneLongProps = {
     songFrames?: number;
     danceFrames?: number;
     folder: string;
+    item?: Entity;
 };
 
 export const SongSceneLong = ({
@@ -62,9 +65,8 @@ export const SongSceneLong = ({
         <>
             {/* KIKU HAPPY */}
             <Sequence durationInFrames={240}>
-                <OffthreadVideo
-                    src={assets.shared.happy}
-                    transparent
+                <KikuAnimation
+                    webm={assets.shared.happy}
                     style={{
                         position: "absolute",
                         bottom: -350,
@@ -77,9 +79,8 @@ export const SongSceneLong = ({
 
             {/* KIKU Pointing */}
             <Sequence from={240}>
-                <OffthreadVideo
-                    src={assets.shared.pointing}
-                    transparent
+                <KikuAnimation
+                    webm={assets.shared.pointing}
                     style={{
                         position: "absolute",
                         bottom: -350,
@@ -89,7 +90,6 @@ export const SongSceneLong = ({
                     volume={0}
                 />
             </Sequence>
-
             <div
                 style={{
                     position: "absolute",
@@ -128,10 +128,10 @@ export const SongSceneLong = ({
                     fontFamily: "Baloo 2",
                     fontWeight: 800,
                     fontSize: getResponsiveFontSize(
-                                    itemName.hindi ?? "",
-                                    120,
-                                    14
-                                  ),
+                        itemName.hindi ?? "",
+                        120,
+                        14
+                    ),
                     lineHeight: 1,
 
                     textAlign: "right",

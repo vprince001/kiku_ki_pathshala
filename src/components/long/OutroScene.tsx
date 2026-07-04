@@ -4,6 +4,8 @@ import {
     staticFile,
 } from "remotion";
 import { BackgroundScene } from "../shared/BackgoundScene";
+import { assets } from "../../data/assets";
+import { KikuAnimation } from "../shared/KikuAnimation";
 
 type OutroSceneProps = {
     audioFile?: string;
@@ -23,9 +25,8 @@ export const OutroScene = ({
             />
 
             {/* Kiku Outro */}
-            <OffthreadVideo
-                src={staticFile("shared/kiku/outro.webm")}
-                transparent
+            <KikuAnimation
+                webm={assets.shared.outro}
                 style={{
                     position: "absolute",
                     bottom: 0,

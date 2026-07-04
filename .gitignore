@@ -7,5 +7,5 @@ dist
 out
 
 # Ignore all videos folders everywhere
-**/entities/**
+public/entities/
 **/released/**

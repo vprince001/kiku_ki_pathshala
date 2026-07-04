@@ -1,5 +1,6 @@
-import { Audio, OffthreadVideo } from "remotion";
+import { Audio } from "remotion";
 import { assets } from "../../data/assets";
+import { KikuAnimation } from "../shared/KikuAnimation";
 
 type BriefSceneProps = {
     itemCount: number;
@@ -14,10 +15,9 @@ export const BriefScene = ({
 }: BriefSceneProps) => {
     return (
         <>
-            {/* KIKU HAPPY */}
-            <OffthreadVideo
-                src={assets.shared.wave}
-                transparent
+            {/* KIKU Wave */}
+            <KikuAnimation
+                webm={assets.shared.wave}
                 style={{
                     position: "absolute",
                     bottom: -10,

@@ -1,4 +1,4 @@
-import { Audio, interpolate, staticFile, useCurrentFrame } from "remotion";
+import { Audio, interpolate, useCurrentFrame } from "remotion";
 import { ObjectImage } from "../shared/ObjectImage";
 import { GuessTimerLong } from "./GuessTimerLong";
 import { assets } from "../../data/assets";

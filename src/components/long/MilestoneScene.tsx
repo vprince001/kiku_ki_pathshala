@@ -14,6 +14,7 @@ import { Fragment } from "react/jsx-runtime";
 import { Confetti } from "../shared/Confetti";
 import { Entity } from "../../data/types";
 import { assets } from "../../data/assets";
+import { KikuAnimation } from "../shared/KikuAnimation";
 
 type MilestoneSceneProps = {
     items: Entity[];
@@ -88,9 +89,8 @@ export const MilestoneScene = ({
 
             <Sequence durationInFrames={90}>
                 {/* Happy Kiku */}
-                <OffthreadVideo
-                    src={assets.shared.happy}
-                    transparent
+                <KikuAnimation
+                    webm={assets.shared.happy}
                     style={{
                         position: "absolute",
                         bottom: 180,
@@ -111,9 +111,8 @@ export const MilestoneScene = ({
 
             {/* Kiku Pointing */}
             <Sequence from={90}>
-                <OffthreadVideo
-                    src={assets.shared.pointing}
-                    transparent
+                <KikuAnimation
+                    webm={assets.shared.pointing}
                     style={{
                         position: "absolute",
                         bottom: 180,

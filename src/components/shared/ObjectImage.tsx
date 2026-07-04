@@ -1,6 +1,3 @@
-import { staticFile } from "remotion";
-import { assets } from "../../data/assets";
-
 type ObjectImageProps = {
   image: string;
   style: React.CSSProperties;

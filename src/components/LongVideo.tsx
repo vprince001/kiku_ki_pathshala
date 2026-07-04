@@ -17,6 +17,7 @@ import { SongSceneLong } from "./long/SongSceneLong";
 import { MilestoneScene } from "./long/MilestoneScene";
 import { assets } from "../data/assets";
 import { Entity } from "../data/types";
+import { KikuAnimation } from "./shared/KikuAnimation";
 
 type LongVideoProps = {
   category: Category;
@@ -155,7 +156,19 @@ export const LongVideo = ({
                 from={start}
                 durationInFrames={questionDuration + timerDuration}
               >
-                <KikuThinking />
+                {/* KIKU Thinking */}
+                <KikuAnimation
+                  webm={assets.shared.thinking}
+                  style={{
+                    position: "absolute",
+                    bottom: 0,
+                    right: 100,
+                    width: 600,
+                    zIndex: 100,
+                    clipPath: "inset(0 0 15px 0)",
+                  }}
+                  volume={0.70}
+                />
               </Sequence>
             )}
 
@@ -242,7 +255,7 @@ export const LongVideo = ({
                 durationInFrames={getSongDuration(item)}
               >
                 <SongSceneLong
-                  itemName={{english: item.name, hindi: item.hindiName || ""}}
+                  itemName={{ english: item.name, hindi: item.hindiName || "" }}
                   songFile={assets.entity.song(item)}
                   videoFile={assets.entity.dance(item)}
                   songFrames={item.songFrames}
