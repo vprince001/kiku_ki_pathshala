@@ -13,7 +13,7 @@ export const birds: Record<string, Entity> = {
 
   hen: {
     id: "hen",
-    name: "hen",
+    name: "Hen",
     hindiName: "मुर्गी",
     entityType: "bird",
     learningFrames: 195,

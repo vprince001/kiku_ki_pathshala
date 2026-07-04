@@ -62,7 +62,7 @@ export const assets = {
 
     completionBackground: staticFile(`shared/images/completion_background.png`),
     
-    outro: staticFile("shared/audio/outro.mp3"),
+    outro: staticFile("shared/kiku/outro.webm"),
 
     wave: staticFile(`shared/kiku/wave.webm`),
 

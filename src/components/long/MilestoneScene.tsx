@@ -1,7 +1,6 @@
 import {
     Audio,
     interpolate,
-    OffthreadVideo,
     Sequence,
     spring,
     staticFile,
@@ -129,7 +128,7 @@ export const MilestoneScene = ({
             <div
                 style={{
                     position: "absolute",
-                    top: 290,
+                    top: 270,
                     left: "50%",
                     transform: `translateX(-50%) scale(${scale})`,
                     opacity,

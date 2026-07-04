@@ -3,7 +3,6 @@ import { Sequence } from "remotion";
 import { BackgroundScene } from "./shared/BackgoundScene";
 import { IntroScene } from "./long/IntroScene";
 import { BriefScene } from "./long/BriefScene";
-import { KikuThinking } from "./shared/KikuThinking";
 import { LearningSceneLong } from "./long/LearningSceneLong";
 import { LONG_TIMINGS_ENGLISH, LONG_TIMINGS_HINDI } from "../config";
 import { CompletionScene } from "./long/CompletionScene";
@@ -101,7 +100,7 @@ export const LongVideo = ({
 
       {/* INTRO */}
       {config.showIntro && (
-        <Sequence from={0} durationInFrames={introDuration}>
+        <Sequence durationInFrames={introDuration}>
           <IntroScene />
         </Sequence>
       )}

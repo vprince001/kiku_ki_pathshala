@@ -233,7 +233,7 @@ export const animals: Record<string, Entity> = {
     entityType: "animal",
     learningFrames: 235,
     factFrames: 360,
-    songFrames: 365,
+    songFrames: 350,
   },
 
   panda: {

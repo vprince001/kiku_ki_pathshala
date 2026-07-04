@@ -1,8 +1,4 @@
-import {
-    Audio,
-    OffthreadVideo,
-    staticFile,
-} from "remotion";
+import { Audio, staticFile } from "remotion";
 import { BackgroundScene } from "../shared/BackgoundScene";
 import { assets } from "../../data/assets";
 import { KikuAnimation } from "../shared/KikuAnimation";

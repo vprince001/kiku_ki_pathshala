@@ -64,13 +64,13 @@ export const categories = {
     folder: "farm_animal_long",
     entities: [
       // animals
+      "bison",
       "buffalo",
       "camel",
       "cat",
       "cow",
       "dog",
       "donkey",
-      "duck",
       "goat",
       "hen",
       "horse",
