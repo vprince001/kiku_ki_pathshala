@@ -2,6 +2,7 @@ import { AnimalLong, AnimalLongDuration } from "../videos/AnimalLong";
 // import { BirdLong, BirdLongDuration } from "../videos/BirdLong";
 // import { DinosaurLong, DinosaurLongDuration } from "../videos/DinosaurLong";
 import { FarmAnimalLong, FarmAnimalLongDuration } from "../videos/FarmAnimalLong";
+import { ReptileLong, ReptileLongDuration } from "../videos/ReptileLong";
 // import { FoodIemLongDuration, FoodItemLong } from "../videos/FoodItemLong";
 // import { FruitLong, FruitLongDuration } from "../videos/FruitLong";
 // import { InsectLong, InsectLongDuration } from "../videos/InsectLong";
@@ -210,6 +211,15 @@ export const FarmAnimalLongConfig = {
   id: "FarmAnimalLong",
   component: FarmAnimalLong,
   durationInFrames: FarmAnimalLongDuration,
+  fps: VIDEO_CONFIG_LONG.FPS,
+  width: VIDEO_CONFIG_LONG.WIDTH,
+  height: VIDEO_CONFIG_LONG.HEIGHT,
+};
+
+export const ReptileLongConfig = {
+  id: "ReptileLong",
+  component: ReptileLong,
+  durationInFrames: ReptileLongDuration,
   fps: VIDEO_CONFIG_LONG.FPS,
   width: VIDEO_CONFIG_LONG.WIDTH,
   height: VIDEO_CONFIG_LONG.HEIGHT,

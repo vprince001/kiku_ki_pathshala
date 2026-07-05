@@ -87,7 +87,7 @@ export const LearningBoard = ({
           opacity: englishOpacity,
           transform: `translateX(scale(${englishScale})`,
           transformOrigin: "center center",
-          lineHeight: 1.2,
+          lineHeight: 0.9,
           textShadow: "6px 6px 0px rgba(0,0,0,0.15)",
         }}
       >

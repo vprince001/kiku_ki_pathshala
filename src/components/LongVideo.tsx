@@ -41,7 +41,6 @@ export const LongVideo = ({
   },
 }: LongVideoProps) => {
   const { items, folder, title } = category;
-  console.log('items--', items);
 
   const timings = config.showHindi ? LONG_TIMINGS_HINDI : LONG_TIMINGS_ENGLISH;
 
@@ -91,7 +90,6 @@ export const LongVideo = ({
     completionDuration;
 
   const outroDuration = config.showOutro ? timings.OUTRO : 0;
-  console.log("---", folder);
 
   return (
     <>
@@ -214,9 +212,9 @@ export const LongVideo = ({
                   name={item.name}
                   hindiName={item.hindiName}
                   audioFile={assets.entity.narration(item)}
-                  folder={folder}
                   showTimer={config.showTimer}
                   showCorrect={config.showCorrect}
+                  learningFrames={item.danceFrames}
                 />
               </Sequence>
             )}

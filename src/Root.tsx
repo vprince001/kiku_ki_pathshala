@@ -69,8 +69,11 @@ import {
 
   // Pet Animals
   // PetAnimalLongConfig
+
+  // Reptiles
+  ReptileLongConfig,
 } from "./config";
 
 export const RemotionRoot = () => {
-  return <Composition { ...FarmAnimalLongConfig} />;
+  return <Composition { ...ReptileLongConfig} />;
 };

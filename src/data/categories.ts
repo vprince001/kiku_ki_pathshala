@@ -88,6 +88,33 @@ export const categories = {
     ]
   },
 
+  reptileLong: {
+    title: "Reptiles",
+    folder: "reptile_long",
+    entities: [
+      "alligator",
+      "basiliskLizard",
+      "beardedDragon",
+      "boxTurtle",
+      "chameleon",
+      "cobra",
+      "cornSnake",
+      "crocodile",
+      "frilledLizard",
+      "gecko",
+      "gharial",
+      "iguana",
+      "komodoDragon",
+      "monitorLizard",
+      "python",
+      "seaTurtle",
+      "skink",
+      "thornyDevil",
+      "tortoise",
+      "tuatara",
+    ]
+  },
+
   dinosaurs: {
     title: "10 Wild Animal Names",
     entityType: "animal",

@@ -22,9 +22,9 @@ type LearningSceneLongProps = {
     name: string;
     hindiName?: string;
     audioFile: string;
-    folder: string;
     showTimer?: boolean;
     showCorrect?: boolean;
+    learningFrames?: number;
 };
 
 export const LearningSceneLong = ({
@@ -32,9 +32,9 @@ export const LearningSceneLong = ({
     name,
     hindiName,
     audioFile,
-    folder,
     showTimer = true,
     showCorrect = true,
+    learningFrames = 300,
 }: LearningSceneLongProps) => {
     const frame = useCurrentFrame();
 
@@ -109,6 +109,7 @@ export const LearningSceneLong = ({
                         zIndex: 999,
                     }}
                     volume={0.50}
+                    learningFrames={learningFrames}
                 />
 
                 {/* Narration */}
