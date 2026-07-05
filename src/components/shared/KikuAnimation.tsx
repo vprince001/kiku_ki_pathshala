@@ -17,7 +17,7 @@ export const KikuAnimation = ({
     learningFrames = 300,
 }: KikuAnimationProps) => {
     const POINTING_ANIMATION_FRAMES = 300;
-    const playbackRate = Math.min(1, POINTING_ANIMATION_FRAMES/learningFrames);
+    const playbackRate = Math.min(1, POINTING_ANIMATION_FRAMES/(learningFrames+10));
 
     if (PREVIEW) {
         return (

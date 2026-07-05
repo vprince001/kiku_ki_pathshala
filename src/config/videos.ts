@@ -6,17 +6,16 @@ import { ReptileLong, ReptileLongDuration } from "../videos/ReptileLong";
 // import { FoodIemLongDuration, FoodItemLong } from "../videos/FoodItemLong";
 // import { FruitLong, FruitLongDuration } from "../videos/FruitLong";
 // import { InsectLong, InsectLongDuration } from "../videos/InsectLong";
-// import { PetAnimalLong, PetAnimalLongDuration } from "../videos/PetAnimalLong";
-// import { PetAnimalLong, PetAnimalLongDuration } from "../videos/PetAnimalLong";
+import { PetAnimalLong, PetAnimalLongDuration } from "../videos/PetAnimalLong";
 // import { SeaAnimalLong, SeaAnimalLongDuration } from "../videos/SeaAnimalLong";
 // import { ToyLong, ToyLongDuration } from "../videos/ToyLong";
 // import { WildAnimalLong, WildAnimalLongDuration } from "../videos/WildAnimalLong";
 
-const VIDEO_CONFIG_SHORT = {
-    FPS: 30,
-    WIDTH: 1080,
-    HEIGHT: 1920,
-};
+// const VIDEO_CONFIG_SHORT = {
+//     FPS: 30,
+//     WIDTH: 1080,
+//     HEIGHT: 1920,
+// };
 
 const VIDEO_CONFIG_LONG = {
     FPS: 30,
@@ -326,11 +325,11 @@ export const AnimalLongConfig = {
 };
 
 // Pet Animals
-// export const PetAnimalLongConfig = {
-//   id: "PetAnimalLong",
-//   component: PetAnimalLong,
-//   durationInFrames: PetAnimalLongDuration,
-//   fps: VIDEO_CONFIG_LONG.FPS,
-//   width: VIDEO_CONFIG_LONG.WIDTH,
-//   height: VIDEO_CONFIG_LONG.HEIGHT,
-// };
+export const PetAnimalLongConfig = {
+  id: "PetAnimalLong",
+  component: PetAnimalLong,
+  durationInFrames: PetAnimalLongDuration,
+  fps: VIDEO_CONFIG_LONG.FPS,
+  width: VIDEO_CONFIG_LONG.WIDTH,
+  height: VIDEO_CONFIG_LONG.HEIGHT,
+};

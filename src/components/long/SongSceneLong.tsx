@@ -121,7 +121,7 @@ export const SongSceneLong = ({
             <div
                 style={{
                     position: "absolute",
-                    top: 70,
+                    top: 60,
                     right: 80,
                     width: 700,
 
@@ -130,7 +130,7 @@ export const SongSceneLong = ({
                     fontSize: getResponsiveFontSize(
                         itemName.hindi ?? "",
                         120,
-                        14
+                        13
                     ),
                     lineHeight: 1,
 

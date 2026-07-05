@@ -94,7 +94,12 @@ export const LongVideo = ({
   return (
     <>
       {/* OPENING BG */}
-      <BackgroundScene image={assets.video.openingBackground(folder)} />
+      {config.showIntro || config.showBrief && (
+        <Sequence durationInFrames={contentStart}>
+          <BackgroundScene image={assets.video.openingBackground(folder)} />
+        </Sequence>
+      )}
+
 
       {/* INTRO */}
       {config.showIntro && (
@@ -214,7 +219,7 @@ export const LongVideo = ({
                   audioFile={assets.entity.narration(item)}
                   showTimer={config.showTimer}
                   showCorrect={config.showCorrect}
-                  learningFrames={item.danceFrames}
+                  learningFrames={item.learningFrames}
                 />
               </Sequence>
             )}

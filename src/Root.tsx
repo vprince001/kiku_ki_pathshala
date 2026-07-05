@@ -2,7 +2,7 @@ import { Composition } from "remotion";
 import "./fonts.css";
 import {
   // Animals
-  AnimalLongConfig,
+  // AnimalLongConfig,
 
   // Fruits
   // FruitLongConfig,
@@ -37,7 +37,7 @@ import {
   // InsectReelConfig,
 
   // Farm Animals
-  FarmAnimalLongConfig,
+  // FarmAnimalLongConfig,
   // FarmAnimalShortConfig,
 
   // Sea Animals
@@ -68,12 +68,12 @@ import {
   // DinosaursLongConfig,
 
   // Pet Animals
-  // PetAnimalLongConfig
+  PetAnimalLongConfig
 
   // Reptiles
-  ReptileLongConfig,
+  // ReptileLongConfig,
 } from "./config";
 
 export const RemotionRoot = () => {
-  return <Composition { ...ReptileLongConfig} />;
+  return <Composition { ...PetAnimalLongConfig} />;
 };

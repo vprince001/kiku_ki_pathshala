@@ -1,19 +1,19 @@
 import { LongVideo } from "../components/LongVideo";
 import { getCategory, getLongDuration } from "../helpers";
 
-const category = getCategory("petAnimalLong", "20 Pet Animals v1");
+const category = getCategory("petAnimalLong", "20 Pet Animals Songs");
 
 export const VIDEO_CONFIG = {
   showIntro: false,
-  showBrief: true,
-  showQuestion: true,
-  showHindi: true,
-  showTimer: true,
+  showBrief: false,
+  showQuestion: false,
+  showHindi: false,
+  showTimer: false,
   showCorrect: false,
-  showLearning: true,
+  showLearning: false,
   showFact: false,
   showSong: true,
-  showMilestone: true,
+  showMilestone: false,
   showCompletion: false,
   showOutro: true,
   milestones: [5, 10, 15, 20],
