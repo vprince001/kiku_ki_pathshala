@@ -63,7 +63,7 @@ export const getLongDuration = (
   const questionDuration = config.showQuestion ? timings.QUESTION : 0;
   const timerDuration = config.showTimer ? timings.TIMER : 0;
   const correctDuration = config.showCorrect ? timings.CORRECT : 0;
-  console.log("items", items);
+
   const getLearningDuration = (item: LearningLongItem) =>
     config.showLearning
       ? item.learningFrames ?? timings.LEARNING

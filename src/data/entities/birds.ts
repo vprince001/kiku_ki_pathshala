@@ -19,6 +19,7 @@ export const birds: Record<string, Entity> = {
     learningFrames: 245,
     factFrames: 360,
     songFrames: 563,
+    danceFrames: 483,
   },
 
   duck: {

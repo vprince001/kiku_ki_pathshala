@@ -19,6 +19,7 @@ export const animals: Record<string, Entity> = {
     learningFrames: 240,
     factFrames: 360,
     songFrames: 653,
+    danceFrames: 601,
   },
 
   buffalo: {

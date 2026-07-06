@@ -37,7 +37,7 @@ import {
   // InsectReelConfig,
 
   // Farm Animals
-  // FarmAnimalLongConfig,
+  FarmAnimalLongConfig,
   // FarmAnimalShortConfig,
 
   // Sea Animals
@@ -68,12 +68,12 @@ import {
   // DinosaursLongConfig,
 
   // Pet Animals
-  PetAnimalLongConfig
+  // PetAnimalLongConfig
 
   // Reptiles
   // ReptileLongConfig,
 } from "./config";
 
 export const RemotionRoot = () => {
-  return <Composition { ...PetAnimalLongConfig} />;
+  return <Composition { ...FarmAnimalLongConfig} />;
 };

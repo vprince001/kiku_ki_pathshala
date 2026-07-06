@@ -88,6 +88,7 @@ export const SongSceneLong = ({
                         width: 500,
                     }}
                     volume={0}
+                    learningFrames={songFrames-240}
                 />
             </Sequence>
             <div

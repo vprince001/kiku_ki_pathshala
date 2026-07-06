@@ -1,7 +1,6 @@
 import { Img, OffthreadVideo, staticFile } from "remotion";
 
 const PREVIEW = process.env.KIKU_PREVIEW === "true";
-console.log("PREVIEW", PREVIEW);
 
 type KikuAnimationProps = {
      webm: string;
