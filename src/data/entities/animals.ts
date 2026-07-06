@@ -83,6 +83,16 @@ export const animals: Record<string, Entity> = {
     songFrames: 357,
   },
 
+  deer: {
+    id: "deer",
+    name: "Deer",
+    hindiName: "हिरण",
+    entityType: "animal",
+    learningFrames: 240,
+    factFrames: 360,
+    songFrames: 359,
+  },
+
   dog: {
     id: "dog",
     name: "Dog",
@@ -103,6 +113,36 @@ export const animals: Record<string, Entity> = {
     songFrames: 349,
   },
 
+  elephant: {
+    id: "elephant",
+    name: "Elephant",
+    hindiName: "हाथी",
+    entityType: "animal",
+    learningFrames: 235,
+    factFrames: 360,
+    songFrames: 364,
+  },
+
+  fox: {
+    id: "fox",
+    name: "Fox",
+    hindiName: "लोमड़ी",
+    entityType: "animal",
+    learningFrames: 220,
+    factFrames: 360,
+    songFrames: 361,
+  },
+
+  giraffe: {
+    id: "giraffe",
+    name: "Giraffe",
+    hindiName: "जिराफ़",
+    entityType: "animal",
+    learningFrames: 250,
+    factFrames: 360,
+    songFrames: 371,
+  },
+
   goat: {
     id: "goat",
     name: "Goat",
@@ -118,7 +158,7 @@ export const animals: Record<string, Entity> = {
     name: "Gorilla",
     hindiName: "गोरिल्ला",
     entityType: "animal",
-    learningFrames: 240,
+    learningFrames: 260,
     factFrames: 360,
     songFrames: 539,
     danceFrames: 513,
@@ -161,7 +201,7 @@ export const animals: Record<string, Entity> = {
     name: "Hippopotamus",
     hindiName: "दरियाई घोड़ा",
     entityType: "animal",
-    learningFrames: 240,
+    learningFrames: 290,
     factFrames: 360,
     songFrames: 663,
     danceFrames: 570,
@@ -182,7 +222,7 @@ export const animals: Record<string, Entity> = {
     name: "Hyena",
     hindiName: "लकड़बग्घा",
     entityType: "animal",
-    learningFrames: 240,
+    learningFrames: 255,
     factFrames: 360,
     songFrames: 545,
   },
@@ -192,7 +232,7 @@ export const animals: Record<string, Entity> = {
     name: "Kangaroo",
     hindiName: "कंगारू",
     entityType: "animal",
-    learningFrames: 240,
+    learningFrames: 255,
     factFrames: 360,
     songFrames: 614,
   },
@@ -202,9 +242,19 @@ export const animals: Record<string, Entity> = {
     name: "Leopard",
     hindiName: "तेंदुआ",
     entityType: "animal",
-    learningFrames: 240,
+    learningFrames: 260,
     factFrames: 360,
     songFrames: 488,
+  },
+
+  lion: {
+    id: "lion",
+    name: "Lion",
+    hindiName: "शेर",
+    entityType: "animal",
+    learningFrames: 245,
+    factFrames: 360,
+    songFrames: 373,
   },
 
   llama: {
@@ -215,6 +265,16 @@ export const animals: Record<string, Entity> = {
     learningFrames: 240,
     factFrames: 360,
     songFrames: 350,
+  },
+
+  monkey: {
+    id: "monkey",
+    name: "Money",
+    hindiName: "बंदर",
+    entityType: "animal",
+    learningFrames: 210,
+    factFrames: 360,
+    songFrames: 362,
   },
 
   mouse: {
@@ -234,7 +294,7 @@ export const animals: Record<string, Entity> = {
     entityType: "animal",
     learningFrames: 235,
     factFrames: 360,
-    songFrames: 350,
+    songFrames: 365,
   },
 
   panda: {
@@ -242,7 +302,7 @@ export const animals: Record<string, Entity> = {
     name: "Panda",
     hindiName: "पांडा",
     entityType: "animal",
-    learningFrames: 240,
+    learningFrames: 230,
     factFrames: 360,
     songFrames: 377,
   },
@@ -292,7 +352,7 @@ export const animals: Record<string, Entity> = {
     name: "Rhinoceros",
     hindiName: "गैंडा",
     entityType: "animal",
-    learningFrames: 240,
+    learningFrames: 285,
     factFrames: 360,
     songFrames: 598,
   },
@@ -308,6 +368,26 @@ export const animals: Record<string, Entity> = {
     danceFrames: 367,
   },
 
+  tiger: {
+    id: "tiger",
+    name: "Tiger",
+    hindiName: "बाघ",
+    entityType: "animal",
+    learningFrames: 245,
+    factFrames: 360,
+    songFrames: 350,
+  },
+
+  wolf: {
+    id: "wolf",
+    name: "Wolf",
+    hindiName: "भेड़िया",
+    entityType: "animal",
+    learningFrames: 225,
+    factFrames: 360,
+    songFrames: 361,
+  },
+
   yak: {
     id: "yak",
     name: "Yak",
@@ -316,5 +396,15 @@ export const animals: Record<string, Entity> = {
     learningFrames: 220,
     factFrames: 360,
     songFrames: 362,
+  },
+
+  zebra: {
+    id: "zebra",
+    name: "Zebra",
+    hindiName: "ज़ेब्रा",
+    entityType: "animal",
+    learningFrames: 275,
+    factFrames: 360,
+    songFrames: 368,
   },
 };

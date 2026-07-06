@@ -1,24 +1,25 @@
 import { LongVideo } from "../components/LongVideo";
 import { getCategory, getLongDuration } from "../helpers";
 
-const category = getCategory("wildAnimalLong", "20-wild-animals-names-v4");
+const category = getCategory("wildAnimalLong");
 
 export const VIDEO_CONFIG = {
   showIntro: false,
   showBrief: false,
   showQuestion: false,
-  showHindi: false,
+  showHindi: true,
   showTimer: false,
   showCorrect: false,
-  showLearning: false,
+  showLearning: true,
   showFact: false,
   showSong: true,
-  showMilestone: false,
+  showMilestone: true,
   showCompletion: false,
   showOutro: true,
   milestones: [5, 10, 15, 20],
 };
 
+console.log(category.items);
 export const WildAnimalLongDuration =
   getLongDuration(category.items, VIDEO_CONFIG);
 

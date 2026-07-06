@@ -9,7 +9,7 @@ import { ReptileLong, ReptileLongDuration } from "../videos/ReptileLong";
 import { PetAnimalLong, PetAnimalLongDuration } from "../videos/PetAnimalLong";
 // import { SeaAnimalLong, SeaAnimalLongDuration } from "../videos/SeaAnimalLong";
 // import { ToyLong, ToyLongDuration } from "../videos/ToyLong";
-// import { WildAnimalLong, WildAnimalLongDuration } from "../videos/WildAnimalLong";
+import { WildAnimalLong, WildAnimalLongDuration } from "../videos/WildAnimalLong";
 
 // const VIDEO_CONFIG_SHORT = {
 //     FPS: 30,
@@ -235,14 +235,14 @@ export const ReptileLongConfig = {
 // };
 
 // Wild Animals
-// export const WildAnimalLongConfig = {
-//   id: "WildAnimalLong",
-//   component: WildAnimalLong,
-//   durationInFrames: WildAnimalLongDuration,
-//   fps: VIDEO_CONFIG_LONG.FPS,
-//   width: VIDEO_CONFIG_LONG.WIDTH,
-//   height: VIDEO_CONFIG_LONG.HEIGHT,
-// };
+export const WildAnimalLongConfig = {
+  id: "WildAnimalLong",
+  component: WildAnimalLong,
+  durationInFrames: WildAnimalLongDuration,
+  fps: VIDEO_CONFIG_LONG.FPS,
+  width: VIDEO_CONFIG_LONG.WIDTH,
+  height: VIDEO_CONFIG_LONG.HEIGHT,
+};
 
 // School Objects
 // export const SchoolObjectLongConfig = {

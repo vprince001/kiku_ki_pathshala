@@ -44,7 +44,7 @@ import {
   // SeaAnimalLongConfig,
 
   // Wild Animals
-  // WildAnimalLongConfig,
+  WildAnimalLongConfig,
 
   // School Objects
   // SchoolObjectLongConfig,
@@ -75,5 +75,5 @@ import {
 } from "./config";
 
 export const RemotionRoot = () => {
-  return <Composition { ...FarmAnimalLongConfig} />;
+  return <Composition { ...WildAnimalLongConfig } />;
 };
