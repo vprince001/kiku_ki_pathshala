@@ -4,6 +4,7 @@ import { birds } from "./birds";
 import { crustaceans } from "./crustaceans";
 import { fishes } from "./fishes";
 import { reptiles } from "./reptiles";
+import { vehicles } from "./vehicles";
 
 export const entities = {
   ...amphibians,
@@ -12,4 +13,5 @@ export const entities = {
   ...crustaceans,
   ...fishes,
   ...reptiles,
+  ...vehicles,
 };

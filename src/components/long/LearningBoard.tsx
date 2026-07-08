@@ -2,6 +2,7 @@ import { useCurrentFrame } from "remotion";
 import {
   getResponsiveFontSize,
   getTransitionEffect,
+  splitEnglishWord,
 } from "../../helpers";
 import { assets } from "../../data/assets";
 
@@ -25,9 +26,8 @@ export const LearningBoard = ({
   const frame = useCurrentFrame();
   const shouldWrap = englishWord.length > 14;
 
-  const englishLines = shouldWrap
-    ? englishWord.split(" ")
-    : [englishWord];
+  const englishLines = splitEnglishWord(englishWord);
+
 
   const longestLine = Math.max(
     ...englishLines.map((line) => line.length)
@@ -37,6 +37,19 @@ export const LearningBoard = ({
     120,
     1050 / longestLine
   );
+
+  const hindiLines = hindiWord ? splitEnglishWord(hindiWord) : [];
+  console.log("hindiLines", hindiLines);
+
+  const longestHindiLine = Math.max(
+    ...hindiLines.map((line) => line.length)
+  );
+  console.log("longestHindiLine", longestHindiLine);
+
+  const hindiFontSize =
+    hindiLines.length === 1
+      ? Math.min(120, 900 / longestHindiLine)
+      : Math.min(120, 1300 / longestHindiLine);
 
   return (
     <div
@@ -119,25 +132,27 @@ export const LearningBoard = ({
             left: "50%",
             transform: `translateX(-50%) scale(${hindiScale})`,
             background: "#d8b4fe",
-            padding: "18px 50px",
+            padding: "20px 60px",
             borderRadius: 999,
             opacity: hindiOpacity,
+
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+
+            fontSize: hindiFontSize,
+            fontWeight: 700,
+            color: "#4f46e5",
+            whiteSpace: "nowrap",
+            lineHeight: 1,
           }}
         >
-          <div
-            style={{
-              fontSize: getResponsiveFontSize(
-                hindiWord ?? "",
-                120,
-                15
-              ),
-              fontWeight: 700,
-              color: "#4f46e5",
-              whiteSpace: "nowrap",
-            }}
-          >
-            {hindiWord}
-          </div>
+          {hindiLines.map((line) => (
+            <div key={line}>
+              {line}
+            </div>
+          ))}
         </div>
       )}
     </div>

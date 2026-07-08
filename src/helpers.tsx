@@ -261,3 +261,81 @@ export function getCategory(name: keyof typeof categories, seed?: string) {
     items: seed ? shuffleArray(items, seed) : items,
   };
 }
+
+const MAX_SINGLE_LINE_WIDTH = 14;
+
+const measureWidth = (text: string) => text.length;
+
+const splitThreeWords = (words: string[]): string[] => {
+  const firstTwo = `${words[0]} ${words[1]}`;
+  const lastTwo = `${words[1]} ${words[2]}`;
+
+  const width12 = measureWidth(firstTwo);
+  const width23 = measureWidth(lastTwo);
+  const width3 = measureWidth(words[2]);
+
+  // If first two words fit comfortably on one line and
+  // are not wider than the third word, keep them together.
+  if (
+    width12 <= MAX_SINGLE_LINE_WIDTH &&
+    width12 <= width3
+  ) {
+    return [firstTwo, words[2]];
+  }
+
+  // Otherwise choose the more balanced split.
+  const score12_3 = Math.abs(width12 - width3);
+  const score1_23 = Math.abs(measureWidth(words[0]) - width23);
+
+  return score12_3 <= score1_23
+    ? [firstTwo, words[2]]
+    : [words[0], lastTwo];
+};
+
+export const splitEnglishWord = (englishWord: string): string[] => {
+  const words = englishWord.trim().split(/\s+/);
+  console.log("words", words);
+
+  if (words.length === 1) {
+    return words;
+  }
+
+  if (words.length === 2) {
+    const combined = words.join(" ");
+    console.log("combined", combined, [combined]);
+    console.log("measureWidth(combined)", measureWidth(combined));
+
+    const result = measureWidth(combined) <= MAX_SINGLE_LINE_WIDTH
+      ? [combined]
+      : words;
+      console.log("result", result)
+    return result
+  }
+
+  if (words.length === 3) {
+    return splitThreeWords(words);
+  }
+
+  // 4+ words (generic balancing)
+  let bestSplit = 1;
+  let bestScore = Number.MAX_SAFE_INTEGER;
+
+  for (let i = 1; i < words.length; i++) {
+    const left = words.slice(0, i).join(" ");
+    const right = words.slice(i).join(" ");
+
+    const score = Math.abs(
+      measureWidth(left) - measureWidth(right)
+    );
+
+    if (score < bestScore) {
+      bestScore = score;
+      bestSplit = i;
+    }
+  }
+
+  return [
+    words.slice(0, bestSplit).join(" "),
+    words.slice(bestSplit).join(" "),
+  ];
+};

@@ -26,13 +26,13 @@ function scan(dir: string) {
       continue;
     }
 
-    if (entry.name !== "dance.mp4") {
-      continue;
-    }
-
-    // if (entry.name !== "song.mp3") {
+    // if (entry.name !== "dance.mp4") {
     //   continue;
     // }
+
+    if (entry.name !== "song.mp3") {
+      continue;
+    }
 
     const entity = path.basename(path.dirname(fullPath));
     const frames = getSongFrames(fullPath);

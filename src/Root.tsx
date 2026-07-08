@@ -4,76 +4,77 @@ import {
   // Animals
   // AnimalLongConfig,
 
-  // Fruits
-  // FruitLongConfig,
-
   // Birds
   // BirdLongConfig,
-
-  // Colour
-  // ColourShortConfig,
-
-  // Shapes
-  // ShapeShortConfig,
-  // ShapeReelConfig,
-
-  // Vehicles
-  // VehicleShortConfig,
-  // VehicleReelConfig,
-
-  // Flowers
-  // FlowerShortConfig,
-  // FlowerReelConfig,
-  // FlowerLongConfig,
 
   // Body Parts
   // BodyPartLongConfig,
   // BodyPartShortConfig,
   // BodyPartReelConfig,
 
-  // Insects
-  // InsectLongConfig,
-  // InsectShortConfig,
-  // InsectReelConfig,
+  // Colour
+  // ColourShortConfig,
+
+  // Community Helpers
+  // CommunityHelperLongConfig,
+
+  // Dinosaurs
+  // DinosaursLongConfig,
 
   // Farm Animals
   FarmAnimalLongConfig,
   // FarmAnimalShortConfig,
 
-  // Sea Animals
-  // SeaAnimalLongConfig,
-
-  // Wild Animals
-  WildAnimalLongConfig,
-
-  // School Objects
-  // SchoolObjectLongConfig,
-
-  // Household Objects
-  // HouseholdObjectLongConfig,
-
-  // Community Helpers
-  // CommunityHelperLongConfig,
+  // Flowers
+  // FlowerShortConfig,
+  // FlowerReelConfig,
+  // FlowerLongConfig,
 
   // Food Items
   // FoodItemsLongConfig,
 
-  // Places Around Us
-  // PlacesAroundUsConfig,
+  // Fruits
+  // FruitLongConfig,
 
-  // Toys
-  // ToysLongConfig,
+  // Household Objects
+  // HouseholdObjectLongConfig,
 
-  // Dinosaurs
-  // DinosaursLongConfig,
+  // Insects
+  // InsectLongConfig,
+  // InsectShortConfig,
+  // InsectReelConfig,
 
   // Pet Animals
   // PetAnimalLongConfig
 
+  // Places Around Us
+  // PlacesAroundUsConfig,
+
   // Reptiles
   // ReptileLongConfig,
+
+  // Sea Animals
+  // SeaAnimalLongConfig,
+
+  // School Objects
+  // SchoolObjectLongConfig,
+
+  // Shapes
+  // ShapeShortConfig,
+  // ShapeReelConfig,
+
+  // Toys
+  // ToysLongConfig,
+
+  // Vehicles
+  VehicleLongConfig
+  // VehicleShortConfig,
+  // VehicleReelConfig,
+
+  // Wild Animals
+  // WildAnimalLongConfig,
 } from "./config";
 
 export const RemotionRoot = () => {
-  return <Composition { ...WildAnimalLongConfig } />;
+  return <Composition {...VehicleLongConfig} />;
 };
