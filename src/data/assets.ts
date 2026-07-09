@@ -18,6 +18,9 @@ export const assets = {
     dance: (entity: Entity) =>
       staticFile(`entities/${entity.entityType}/${entity.id}/dance.mp4`),
 
+    danceShort: (entity: Entity) =>
+      staticFile(`entities/${entity.entityType}/${entity.id}/${entity.id}_dance.mp4`),
+
     educationalVideo: (entity: Entity) =>
       staticFile(`entities/${entity.entityType}/${entity.id}/educational.mp4`),
 

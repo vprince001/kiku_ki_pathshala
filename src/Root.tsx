@@ -68,13 +68,14 @@ import {
 
   // Vehicles
   // VehicleLongConfig,
-  VehicleShortConfig,
+  // VehicleShortConfig,
   // VehicleReelConfig,
 
   // Wild Animals
   // WildAnimalLongConfig,
+  WildAnimalShortConfig,
 } from "./config";
 
 export const RemotionRoot = () => {
-  return <Composition {...VehicleShortConfig} />;
+  return <Composition {...WildAnimalShortConfig} />;
 };

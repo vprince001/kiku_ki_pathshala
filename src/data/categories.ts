@@ -306,4 +306,11 @@ export const categories = {
       "zebra",
     ]
   },
+
+  wildAnimalShort: {
+    title: "Wild Animals",
+    entityType: "animal",
+    folder: "wild_animal_short",
+    entities: ["bear"]
+  },
 };

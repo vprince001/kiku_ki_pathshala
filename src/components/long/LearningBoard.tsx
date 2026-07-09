@@ -1,6 +1,5 @@
-import { useCurrentFrame } from "remotion";
+import { Img, useCurrentFrame } from "remotion";
 import {
-  getResponsiveFontSize,
   getTransitionEffect,
   splitEnglishWord,
 } from "../../helpers";
@@ -75,7 +74,7 @@ export const LearningBoard = ({
           left: 230,
         }}
       >
-        <img
+        <Img
           src={assets.shared.boardStar}
           style={{
             maxWidth: "100%",

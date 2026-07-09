@@ -53,9 +53,6 @@ export const ShortVideo = ({
     getLearningDuration(item) +
     getSongDuration(item);
 
-  // const getItemsDuration = (items: Entity[]) =>
-  //   items.reduce((total, item) => total + getItemDuration(item), 0);
-
   const totalItemsDuration =
     items.reduce((total, item) => total + getItemDuration(item), 0);
 
@@ -170,7 +167,7 @@ export const ShortVideo = ({
                 <SongSceneShort
                   itemName={{ english: item.name, hindi: item.hindiName || "" }}
                   songFile={assets.entity.song(item)}
-                  videoFile={assets.entity.dance(item)}
+                  videoFile={assets.entity.danceShort(item)}
                   songFrames={item.songFrames}
                   danceFrames={item.danceFrames}
                   folder={folder}

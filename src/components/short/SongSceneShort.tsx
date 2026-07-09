@@ -94,7 +94,7 @@ export const SongSceneShort = ({
             <div
                 style={{
                     position: "absolute",
-                    top: 50,
+                    top: 100,
                     left: 80,
                     width: "100%",
 
@@ -122,7 +122,7 @@ export const SongSceneShort = ({
             <div
                 style={{
                     position: "absolute",
-                    top: 45,
+                    top: 90,
                     right: 80,
                     width: 700,
 

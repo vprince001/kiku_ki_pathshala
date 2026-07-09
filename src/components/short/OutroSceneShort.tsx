@@ -9,23 +9,24 @@ type OutroSceneShortProps = {
 };
 
 export const OutroSceneShort = ({
-    audioFile
+    audioFile,
 }: OutroSceneShortProps) => {
     const frame = useCurrentFrame();
 
     return (
         <>
-            {/* Short */}
+            {/* KIKU WAVE */}
             <KikuAnimation
                 webm={assets.shared.wave}
                 style={{
                     position: "absolute",
-                    bottom: getTransitionEffect(frame, [-350, 250]),
-                    right: 0,
-                    width: 950,
+                    bottom: getTransitionEffect(frame, [-275, 250]),
+                    right: getTransitionEffect(frame, [-100, 0]),
+                    width: getTransitionEffect(frame, [500, 950]),
                     clipPath: "inset(0 0 15px 0)",
                 }}
                 volume={0}
+                startFrom={30}
             />
 
             <ObjectImage

@@ -9,10 +9,10 @@
 // import { ReptileLong, ReptileLongDuration } from "../videos/ReptileLong";
 // import { SeaAnimalLong, SeaAnimalLongDuration } from "../videos/SeaAnimalLong";
 // import { ToyLong, ToyLongDuration } from "../videos/ToyLong";
-import { VehicleLong, VehicleLongDuration } from "../videos/VehicleLong";
+// import { VehicleLong, VehicleLongDuration } from "../videos/VehicleLong";
+// import { VehicleShort, VehicleShortDuration } from "../videos/VehicleShort";
 // import { WildAnimalLong, WildAnimalLongDuration } from "../videos/WildAnimalLong";
-
-import { VehicleShort, VehicleShortDuration } from "../videos/VehicleShort";
+import { WildAnimalShort, WildAnimalShortDuration } from "../videos/WildAnimalShort";
 
 const VIDEO_CONFIG_SHORT = {
     FPS: 30,
@@ -322,23 +322,23 @@ export const VIDEO_CONFIG = {
 
 // Vehicles
 
-export const VehicleLongConfig = {
-  id: "VehicleLong",
-  component: VehicleLong,
-  durationInFrames: VehicleLongDuration,
-  fps: VIDEO_CONFIG_LONG.FPS,
-  width: VIDEO_CONFIG_LONG.WIDTH,
-  height: VIDEO_CONFIG_LONG.HEIGHT,
-};
+// export const VehicleLongConfig = {
+//   id: "VehicleLong",
+//   component: VehicleLong,
+//   durationInFrames: VehicleLongDuration,
+//   fps: VIDEO_CONFIG_LONG.FPS,
+//   width: VIDEO_CONFIG_LONG.WIDTH,
+//   height: VIDEO_CONFIG_LONG.HEIGHT,
+// };
 
-export const VehicleShortConfig = {
-  id: "VehicleShort",
-  component: VehicleShort,
-  durationInFrames: VehicleShortDuration,
-  fps: VIDEO_CONFIG_SHORT.FPS,
-  width: VIDEO_CONFIG_SHORT.WIDTH,
-  height: VIDEO_CONFIG_SHORT.HEIGHT,
-};
+// export const VehicleShortConfig = {
+//   id: "VehicleShort",
+//   component: VehicleShort,
+//   durationInFrames: VehicleShortDuration,
+//   fps: VIDEO_CONFIG_SHORT.FPS,
+//   width: VIDEO_CONFIG_SHORT.WIDTH,
+//   height: VIDEO_CONFIG_SHORT.HEIGHT,
+// };
 
 // export const VehicleReelConfig = {
 //   id: "VehicleReel",
@@ -350,6 +350,7 @@ export const VehicleShortConfig = {
 // };
 
 // Wild Animals
+
 // export const WildAnimalLongConfig = {
 //   id: "WildAnimalLong",
 //   component: WildAnimalLong,
@@ -358,3 +359,12 @@ export const VehicleShortConfig = {
 //   width: VIDEO_CONFIG_LONG.WIDTH,
 //   height: VIDEO_CONFIG_LONG.HEIGHT,
 // };
+
+export const WildAnimalShortConfig = {
+  id: "WildAnimalShort",
+  component: WildAnimalShort,
+  durationInFrames: WildAnimalShortDuration,
+  fps: VIDEO_CONFIG_SHORT.FPS,
+  width: VIDEO_CONFIG_SHORT.WIDTH,
+  height: VIDEO_CONFIG_SHORT.HEIGHT,
+};

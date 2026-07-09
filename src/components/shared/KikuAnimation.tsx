@@ -3,10 +3,11 @@ import { Img, OffthreadVideo, staticFile } from "remotion";
 const PREVIEW = process.env.KIKU_PREVIEW === "true";
 
 type KikuAnimationProps = {
-     webm: string;
+    webm: string;
     style: React.CSSProperties;
     volume?: number;
     learningFrames?: number;
+    startFrom?: number;
 };
 
 export const KikuAnimation = ({
@@ -14,6 +15,7 @@ export const KikuAnimation = ({
     style,
     volume = 1,
     learningFrames = 300,
+    startFrom = 0,
 }: KikuAnimationProps) => {
     const POINTING_ANIMATION_FRAMES = 300;
     const playbackRate = Math.min(1, POINTING_ANIMATION_FRAMES/(learningFrames+10));
@@ -34,6 +36,7 @@ export const KikuAnimation = ({
             volume={volume}
             playbackRate={playbackRate}
             transparent
+            trimBefore={startFrom}
         />
     );
 };
