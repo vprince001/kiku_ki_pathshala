@@ -1,12 +1,12 @@
-import { interpolate, staticFile } from "remotion";
+import { Img, interpolate, staticFile } from "remotion";
 import { TimerBox } from "../shared/TimerBox";
 
 type StarProps = { style: React.CSSProperties };
 
 const Star = ({ style }: StarProps) => {
     return (
-        <img
-            src={staticFile("timer/timer_star.png")}
+        <Img
+            src={staticFile("shared/images/timer/timer_star.png")}
             style={{
                 position: "absolute",
                 ...style
@@ -50,8 +50,8 @@ const AnimatedStar = ({
     }
 
     return (
-        <img
-            src={staticFile("timer/timer_star.png")}
+        <Img
+            src={staticFile("shared/images/timer/timer_star.png")}
             style={{
                 position: "absolute",
                 transform: `scale(${scale})`,

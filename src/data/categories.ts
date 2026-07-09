@@ -248,7 +248,6 @@ export const categories = {
 
   vehicleLong: {
     title: "Vehicles",
-    entityType: "vehicle",
     folder: "vehicle_long",
     entities: [
       "aeroplane",
@@ -272,6 +271,12 @@ export const categories = {
       "truck",
       "van",
     ]
+  },
+
+  vehicleShort: {
+    title: "Vehicles",
+    folder: "vehicle_short",
+    entities: ["aeroplane"]
   },
 
   wildAnimalLong: {

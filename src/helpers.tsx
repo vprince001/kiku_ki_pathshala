@@ -1,61 +1,38 @@
 import { interpolate } from "remotion";
-import {
-  LONG_TIMINGS_ENGLISH,
-  LONG_TIMINGS_HINDI,
-  SHORT_TIMINGS_ENGLISH_1_FACT,
-  SHORT_TIMINGS_ENGLISH_2_FACT,
-  SHORT_TIMINGS_HINDI_1_FACT,
-  SHORT_TIMINGS_HINDI_2_FACT
-} from "./config";
-import { LearningLongItem, LongVideoConfig } from "./types";
+import { LONG_TIMINGS, SHORT_TIMINGS } from "./config";
+import { LongVideoConfig, ShortVideoConfig } from "./types";
 import seedrandom from "seedrandom";
 import { categories } from "./data/categories";
 import { entities } from "./data/entities";
-
-export const getShortDuration = (
-  itemCount: number,
-  showHindi: boolean,
-  outroDuration: number,
-  factCount: number = 1
-) => {
-  const shortTimingEnglish = factCount == 1 ?
-    SHORT_TIMINGS_ENGLISH_1_FACT :
-    SHORT_TIMINGS_ENGLISH_2_FACT;
-
-  const shortTimingHindi = factCount === 1 ?
-    SHORT_TIMINGS_HINDI_1_FACT :
-    SHORT_TIMINGS_HINDI_2_FACT;
-
-  const shortTimings = showHindi
-    ? shortTimingHindi
-    : shortTimingEnglish;
-
-  return (
-    itemCount * shortTimings.ITEM_DURATION +
-    outroDuration
-  );
-};
+import { Entity } from "./data/types";
 
 export const DEFAULT_LONG_VIDEO_CONFIG = {
-  showIntro: true,
-  showBrief: true,
-  showQuestion: true,
-  showHindi: false,
-  showTimer: true,
-  showCorrect: true,
+  showIntro: false,
+  showBrief: false,
+  showQuestion: false,
+  showTimer: false,
+  showCorrect: false,
   showLearning: true,
-  showFact: true,
-  showSong: true,
-  showMilestone: true,
-  showCompletion: true,
-  showOutro: true,
+  showSong: false,
+  showMilestone: false,
+  showCompletion: false,
+  showOutro: false,
+};
+
+export const DEFAULT_SHORT_VIDEO_CONFIG = {
+  showQuestion: false,
+  showTimer: false,
+  showCorrect: false,
+  showLearning: true,
+  showSong: false,
+  showOutro: false,
 };
 
 export const getLongDuration = (
-  items: LearningLongItem[],
+  items: Entity[],
   config: LongVideoConfig = DEFAULT_LONG_VIDEO_CONFIG
 ) => {
-  const timings = config.showHindi ? LONG_TIMINGS_HINDI : LONG_TIMINGS_ENGLISH;
+  const timings = LONG_TIMINGS;
 
   const introDuration = config.showIntro ? timings.INTRO : 0;
   const briefDuration = config.showBrief ? timings.BRIEF : 0;
@@ -64,27 +41,21 @@ export const getLongDuration = (
   const timerDuration = config.showTimer ? timings.TIMER : 0;
   const correctDuration = config.showCorrect ? timings.CORRECT : 0;
 
-  const getLearningDuration = (item: LearningLongItem) =>
+  const getLearningDuration = (item: Entity) =>
     config.showLearning
       ? item.learningFrames ?? timings.LEARNING
       : 0;
 
-  const getFactDuration = (item: LearningLongItem) =>
-    config.showFact
-      ? item.factFrames ?? timings.FACT
-      : 0;
-
-  const getSongDuration = (item: LearningLongItem) =>
+  const getSongDuration = (item: Entity) =>
     config.showSong
       ? item.songFrames ?? 0
       : 0;
 
-  const getItemDuration = (item: LearningLongItem) =>
+  const getItemDuration = (item: Entity) =>
     questionDuration +
     timerDuration +
     correctDuration +
     getLearningDuration(item) +
-    getFactDuration(item) +
     getSongDuration(item);
 
   const totalItemsDuration = items.reduce(
@@ -117,6 +88,47 @@ export const getLongDuration = (
     outroDuration
   );
 };
+
+export const getShortDuration = (
+  items: Entity[],
+  config: ShortVideoConfig = DEFAULT_SHORT_VIDEO_CONFIG
+) => {
+  const timings = SHORT_TIMINGS;
+
+  const questionDuration = config.showQuestion ? timings.QUESTION : 0;
+  const timerDuration = config.showTimer ? timings.TIMER : 0;
+  const correctDuration = config.showCorrect ? timings.CORRECT : 0;
+
+  const getLearningDuration = (item: Entity) =>
+    config.showLearning
+      ? item.learningFrames ?? timings.LEARNING
+      : 0;
+
+  const getSongDuration = (item: Entity) =>
+    config.showSong
+      ? item.songFrames ?? 0
+      : 0;
+
+  const getItemDuration = (item: Entity) =>
+    questionDuration +
+    timerDuration +
+    correctDuration +
+    getLearningDuration(item) +
+    getSongDuration(item);
+
+  const totalItemsDuration = items.reduce(
+    (total, item) => total + getItemDuration(item),
+    0
+  );
+
+  const outroDuration = config.showOutro ? timings.OUTRO : 0;
+
+  return (
+    totalItemsDuration +
+    outroDuration
+  );
+};
+
 
 export const getTextScale = (
   text: string,
@@ -227,9 +239,9 @@ export const getCardEntry = (
 };
 
 export const shuffleArray = (
-  items: any[],
+  items: Entity[],
   seed: string
-): any[] => {
+): Entity[] => {
   const rng = seedrandom(seed);
   const shuffled = [...items];
 

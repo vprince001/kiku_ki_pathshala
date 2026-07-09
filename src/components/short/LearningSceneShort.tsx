@@ -1,15 +1,12 @@
 import {
     Audio,
     interpolate,
-    OffthreadVideo,
-    Sequence,
-    staticFile,
     useCurrentFrame,
 } from "remotion";
 import { ObjectImage } from "../shared/ObjectImage";
 import { TimerBox } from "../shared/TimerBox";
-import { LearningBoard } from "../shared/LearningBoard/LearningBoard";
-import { getNameOpacity, getNameScale, getTextScale } from "../../helpers";
+import { KikuAnimation } from "../shared/KikuAnimation";
+import { assets } from "../../data/assets";
 
 const getScale = (text: string) => {
     const maxChars = 8;
@@ -19,27 +16,21 @@ const getScale = (text: string) => {
     return maxChars / text.length;
 };
 
-type RevealSceneShortProps = {
+type LearningSceneShortProps = {
     image: string;
     name: string;
     hindiName?: string;
     audioFile: string;
-    videoFile: string;
-    videoFile2?: string;
-    folder: string;
-    timings: any;
+    learningFrames?: number;
 };
 
-export const RevealSceneShort = ({
+export const LearningSceneShort = ({
     image,
     name,
     hindiName,
     audioFile,
-    videoFile,
-    videoFile2,
-    folder,
-    timings,
-}: RevealSceneShortProps) => {
+    learningFrames = 300,
+}: LearningSceneShortProps) => {
     const frame = useCurrentFrame();
 
     const imageScale = interpolate(
@@ -102,24 +93,9 @@ export const RevealSceneShort = ({
 
     return (
         <>
-            {/* Kiku Pointing */}
-            <Sequence from={1} durationInFrames={timings.KIKU_POINTING}>
-                <OffthreadVideo
-                    src={staticFile("kiku/pointing.webm")}
-                    style={{
-                        position: "absolute",
-                        bottom: -360,
-                        right: -150,
-                        width: 680,
-                        zIndex: 100,
-                    }}
-                    transparent
-                />
-            </Sequence>
-
             {/* Object Image */}
             <ObjectImage
-                image={`${folder}/images/${image}`}
+                image={image}
                 transform={`scale(${imageScale}) rotate(${rotation}deg)`}
                 style={{
                     top: 300,
@@ -129,15 +105,13 @@ export const RevealSceneShort = ({
                 }}
             />
 
-            <Sequence from={1}>
-                <TimerBox style={{
-                    position: "absolute",
-                    bottom: 120,
-                    left: "40%",
-                    transform: "translateX(-50%)",
-                    width: 1000,
-                }} />
-            </Sequence>
+            <TimerBox style={{
+                position: "absolute",
+                bottom: 120,
+                left: "40%",
+                transform: "translateX(-50%)",
+                width: 1000,
+            }} />
 
             {/* English Name */}
             <div
@@ -177,59 +151,22 @@ export const RevealSceneShort = ({
                 {hindiName}
             </div>}
 
+            {/* Kiku Pointing */}
+            <KikuAnimation
+                webm={assets.shared.pointing}
+                style={{
+                    position: "absolute",
+                    bottom: -360,
+                    right: -150,
+                    width: 680,
+                    zIndex: 1,
+                }}
+                volume={0.50}
+                learningFrames={learningFrames}
+            />
+
             {/* Narration Audio */}
-            <Sequence
-                durationInFrames={
-                    videoFile2 ?
-                        timings.KIKU_POINTING + (timings.FACT_DURATION * 2) :
-                        timings.KIKU_POINTING + timings.FACT_DURATION
-                }
-            >
-                <Audio
-                    src={staticFile(`${folder}/audio/${audioFile}`)}
-                />
-            </Sequence>
-
-            {/* FACT VIDEO */}
-            <Sequence
-                from={timings.FACT_START_OFFSET}
-                durationInFrames={timings.FACT_DURATION}
-            >
-                <OffthreadVideo
-                    src={staticFile(`${folder}/videos-short/${videoFile}`)}
-                    style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                    }}
-                />
-            </Sequence>
-
-            {/* FACT VIDEO 2 */}
-            {videoFile2 &&
-                <Sequence
-                    from={timings.FACT_START_OFFSET + timings.FACT_DURATION}
-                    durationInFrames={timings.FACT_DURATION}
-                >
-                    <OffthreadVideo
-                        src={staticFile(`${folder}/videos-short/${videoFile2}`)}
-                        style={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover",
-                        }}
-                    />
-                </Sequence>
-            }
-
-            {/* Reveal Music */}
-            <Sequence
-                from={timings.FACT_START_OFFSET}
-            >
-                <Audio
-                    src={staticFile(`audio/reveal_music.mp3`)}
-                />
-            </Sequence>
+            <Audio src={audioFile} />
         </>
     );
 };

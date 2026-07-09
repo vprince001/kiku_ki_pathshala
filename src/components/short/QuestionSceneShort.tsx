@@ -1,15 +1,18 @@
-import { Audio, interpolate, staticFile, useCurrentFrame } from "remotion";
+import { Audio, interpolate, useCurrentFrame } from "remotion";
 import { ObjectImage } from "../shared/ObjectImage";
 import { GuessTimerShort } from "./GuessTimerShort";
+import { assets } from "../../data/assets";
 
 type QuestionSceneShortProps = {
   image: string;
   folder: string;
+  showTimer?: boolean;
 };
 
 export const QuestionSceneShort = ({
   image,
   folder,
+  showTimer = false,
 }: QuestionSceneShortProps) => {
   const frame = useCurrentFrame();
 
@@ -24,12 +27,11 @@ export const QuestionSceneShort = ({
 
   const floatY = Math.sin(frame / 15) * 5;
 
-
   return (
     <>
       {/* Object Image */}
         <ObjectImage
-          image={`${folder}/images/${image}`}
+          image={image}
           style={{
             top: 300,
             right: 270,
@@ -40,7 +42,8 @@ export const QuestionSceneShort = ({
         />
 
       {/* Three Star Timer */}
-      <GuessTimerShort
+      {showTimer && (
+        <GuessTimerShort
           frame={frame}
           animated={false}
           starContainerStyle={{ top: 550 }}
@@ -48,9 +51,10 @@ export const QuestionSceneShort = ({
           secondStarStyle={{ left: 320, width: 220, top: 790 }}
           thirdStarStyle={{ left: 560, width: 220, top: 790 }}
         />
+      )}
 
       {/* Question Audio */}
-      <Audio src={staticFile(`${folder}/audio/question.mp3`)} />
+      <Audio src={assets.video.questionAudio(folder)} />
     </>
   );
 };

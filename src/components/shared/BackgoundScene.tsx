@@ -1,4 +1,4 @@
-import { AbsoluteFill } from "remotion";
+import { AbsoluteFill, Img } from "remotion";
 
 type LayoutProps = {
   image: string;
@@ -7,7 +7,7 @@ type LayoutProps = {
 export const BackgroundScene = ({ image } : LayoutProps) => {
   return (
     <AbsoluteFill>
-      <img
+      <Img
         src={image}
         style={{
           width: "100%",

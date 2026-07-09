@@ -4,19 +4,18 @@ import { BackgroundScene } from "./shared/BackgoundScene";
 import { IntroScene } from "./long/IntroScene";
 import { BriefScene } from "./long/BriefScene";
 import { LearningSceneLong } from "./long/LearningSceneLong";
-import { LONG_TIMINGS_ENGLISH, LONG_TIMINGS_HINDI } from "../config";
 import { CompletionScene } from "./long/CompletionScene";
 import { OutroScene } from "./long/OutroScene";
 import { TimerSceneLong } from "./long/TimerSceneLong";
 import { QuestionSceneLong } from "./long/QuestionSceneLong";
 import { CorrectScene } from "./long/CorrectScene";
-import { FactSceneLong } from "./long/FactSceneLong";
 import { Category, LongVideoConfig } from "../types";
 import { SongSceneLong } from "./long/SongSceneLong";
 import { MilestoneScene } from "./long/MilestoneScene";
 import { assets } from "../data/assets";
 import { Entity } from "../data/types";
 import { KikuAnimation } from "./shared/KikuAnimation";
+import { LONG_TIMINGS } from "../config";
 
 type LongVideoProps = {
   category: Category;
@@ -29,11 +28,9 @@ export const LongVideo = ({
     showIntro: true,
     showBrief: true,
     showQuestion: true,
-    showHindi: true,
     showTimer: true,
     showCorrect: true,
     showLearning: true,
-    showFact: true,
     showSong: true,
     showMilestone: true,
     showCompletion: true,
@@ -42,7 +39,7 @@ export const LongVideo = ({
 }: LongVideoProps) => {
   const { items, folder, title } = category;
 
-  const timings = config.showHindi ? LONG_TIMINGS_HINDI : LONG_TIMINGS_ENGLISH;
+  const timings = LONG_TIMINGS;
 
   const introDuration = config.showIntro ? timings.INTRO : 0;
   const briefDuration = config.showBrief ? timings.BRIEF : 0;
@@ -55,9 +52,6 @@ export const LongVideo = ({
   const getLearningDuration = (item: Entity) =>
     config.showLearning ? item.learningFrames ?? timings.LEARNING : 0;
 
-  const getFactDuration = (item: Entity) =>
-    config.showFact ? item.factFrames ?? timings.FACT : 0;
-
   const getSongDuration = (item: Entity) =>
     config.showSong ? item.songFrames ?? 0 : 0;
 
@@ -66,7 +60,6 @@ export const LongVideo = ({
     timerDuration +
     correctDuration +
     getLearningDuration(item) +
-    getFactDuration(item) +
     getSongDuration(item);
 
   const getItemsDuration = (items: Entity[]) =>
@@ -99,7 +92,6 @@ export const LongVideo = ({
           <BackgroundScene image={assets.video.openingBackground(folder)} />
         </Sequence>
       )}
-
 
       {/* INTRO */}
       {config.showIntro && (
@@ -158,7 +150,6 @@ export const LongVideo = ({
                 from={start}
                 durationInFrames={questionDuration + timerDuration}
               >
-                {/* KIKU Thinking */}
                 <KikuAnimation
                   webm={assets.shared.thinking}
                   style={{
@@ -180,10 +171,7 @@ export const LongVideo = ({
                 from={start + questionDuration}
                 durationInFrames={timerDuration}
               >
-                <TimerSceneLong
-                  image={assets.entity.image(item)}
-                  folder={folder}
-                />
+                <TimerSceneLong image={assets.entity.image(item)} />
               </Sequence>
             )}
 
@@ -196,7 +184,6 @@ export const LongVideo = ({
                 <CorrectScene
                   image={assets.entity.image(item)}
                   audioFile={assets.shared.praise(item.praiseAudio)}
-                  folder={folder}
                 />
               </Sequence>
             )}
@@ -224,25 +211,6 @@ export const LongVideo = ({
               </Sequence>
             )}
 
-            {/* FACT VIDEO */}
-            {config.showFact && (
-              <Sequence
-                from={
-                  start +
-                  questionDuration +
-                  timerDuration +
-                  correctDuration +
-                  getLearningDuration(item)
-                }
-                durationInFrames={getFactDuration(item)}
-              >
-                <FactSceneLong
-                  videoFile={assets.entity.dance(item)}
-                  folder={folder}
-                />
-              </Sequence>
-            )}
-
             {/* SONG VIDEO */}
             {config.showSong && (
               <Sequence
@@ -251,8 +219,7 @@ export const LongVideo = ({
                   questionDuration +
                   timerDuration +
                   correctDuration +
-                  getLearningDuration(item) +
-                  getFactDuration(item)
+                  getLearningDuration(item)
                 }
                 durationInFrames={getSongDuration(item)}
               >

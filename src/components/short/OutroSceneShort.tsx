@@ -1,32 +1,45 @@
-import { Audio, OffthreadVideo, staticFile } from "remotion";
+import { Audio, useCurrentFrame } from "remotion";
+import { KikuAnimation } from "../shared/KikuAnimation";
+import { assets } from "../../data/assets";
+import { ObjectImage } from "../shared/ObjectImage";
+import { getTransitionEffect } from "../../helpers";
 
 type OutroSceneShortProps = {
-    video: string;
-    style: React.CSSProperties;
+    audioFile: string;
 };
 
 export const OutroSceneShort = ({
-    video,
-    style,
+    audioFile
 }: OutroSceneShortProps) => {
+    const frame = useCurrentFrame();
+
     return (
         <>
             {/* Short */}
-            <OffthreadVideo
-                src={staticFile(`kiku/${video}`)}
-                transparent
+            <KikuAnimation
+                webm={assets.shared.wave}
                 style={{
                     position: "absolute",
-                    zIndex: 999,
-                    clipPath: "inset(0px 0px 2px 0px)",
-                    ...style,
+                    bottom: getTransitionEffect(frame, [-350, 250]),
+                    right: 0,
+                    width: 950,
+                    clipPath: "inset(0 0 15px 0)",
+                }}
+                volume={0}
+            />
+
+            <ObjectImage
+                image={assets.shared.channelBoard}
+                style={{
+                    top: 1200,
+                    right: 300,
+                    width: getTransitionEffect(frame, [0, 500]),
+                    height: getTransitionEffect(frame, [0, 500]),
                 }}
             />
 
             {/* Reveal Music */}
-            <Audio
-                src={staticFile("audio/reveal_music.mp3")}
-            />
+            <Audio src={audioFile} />
         </>
 
     );

@@ -7,7 +7,6 @@ export const VIDEO_CONFIG = {
   showIntro: false,
   showBrief: false,
   showQuestion: false,
-  showHindi: false,
   showTimer: false,
   showCorrect: false,
   showLearning: false,

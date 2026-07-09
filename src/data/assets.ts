@@ -54,11 +54,18 @@ export const assets = {
 
     sparkle: staticFile("shared/audio/sound_effects/sparkle.mp3"),
 
+    channelBoard: staticFile("shared/images/channel_board.png"),
+
     starSparkle: staticFile("shared/audio/sound_effects/star_sparkle.mp3"),
+
+    channelNameCallout: staticFile("shared/audio/dialogues/channel_name_callout.mp3"),
 
     revealMusic: staticFile("shared/audio/music/reveal_music.mp3"),
 
     boardStar: staticFile("shared/images/board_star.png"),
+
+    shortThumbnail: (folder: string) =>
+      staticFile(`videos/${folder}/thumbnails/thumbnail.png`),
 
     completionBackground: staticFile(`shared/images/completion_background.png`),
     
@@ -75,7 +82,5 @@ export const assets = {
     pointingPreview: staticFile(`shared/kiku/pointing.webp`),
 
     happy: staticFile(`shared/kiku/happy.webm`),
-
-    happyPreview: staticFile(`shared/kiku/happy.webp`),
   },
 };

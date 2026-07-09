@@ -11,10 +11,9 @@ import { assets } from "../../data/assets";
 type CorrectSceneLongProps = {
   image: string;
   audioFile: string;
-  folder: string;
 };
 
-export const CorrectScene = ({ image, audioFile, folder }: CorrectSceneLongProps) => {
+export const CorrectScene = ({ image, audioFile }: CorrectSceneLongProps) => {
   const frame = useCurrentFrame();
 
   const floatY = Math.sin(frame / 15) * 5;

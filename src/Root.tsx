@@ -22,7 +22,7 @@ import {
   // DinosaursLongConfig,
 
   // Farm Animals
-  FarmAnimalLongConfig,
+  // FarmAnimalLongConfig,
   // FarmAnimalShortConfig,
 
   // Flowers
@@ -67,8 +67,8 @@ import {
   // ToysLongConfig,
 
   // Vehicles
-  VehicleLongConfig
-  // VehicleShortConfig,
+  // VehicleLongConfig,
+  VehicleShortConfig,
   // VehicleReelConfig,
 
   // Wild Animals
@@ -76,5 +76,5 @@ import {
 } from "./config";
 
 export const RemotionRoot = () => {
-  return <Composition {...VehicleLongConfig} />;
+  return <Composition {...VehicleShortConfig} />;
 };

@@ -1,3 +1,5 @@
+import { Img } from "remotion";
+
 type ObjectImageProps = {
   image: string;
   style: React.CSSProperties;
@@ -21,7 +23,7 @@ export const ObjectImage = ({
         ...style,
       }}
     >
-      <img
+      <Img
         src={image}
         style={{
           maxWidth: "100%",

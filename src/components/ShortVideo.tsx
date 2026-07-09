@@ -1,144 +1,192 @@
 import { Fragment } from "react/jsx-runtime";
 import { Sequence } from "remotion";
-import { KikuThinking } from "./shared/KikuThinking";
 import { QuestionSceneShort } from "./short/QuestionSceneShort";
 import { TimerSceneShort } from "./short/TimerSceneShort";
-import { RevealSceneShort } from "./short/RevealSceneShort";
-import { OutroSceneShort } from "./short/OutroSceneShort";
-import {
-  SHORT_TIMINGS_ENGLISH_1_FACT,
-  SHORT_TIMINGS_ENGLISH_2_FACT,
-  SHORT_TIMINGS_HINDI_1_FACT,
-  SHORT_TIMINGS_HINDI_2_FACT
-} from "../config";
+import { LearningSceneShort } from "./short/LearningSceneShort";
+import { SHORT_TIMINGS } from "../config";
 import { BackgroundScene } from "./shared/BackgoundScene";
 import { ThumbnailScene } from "./short/ThumbnailScene";
-
-export type LearningItem = {
-  name: string;
-  hindiName?: string;
-  image: string;
-  praiseAudio: string;
-  narration: string;
-  video: string;
-  video2?: string;
-};
-
-export type OutroConfig = {
-  video: string;
-  duration: number;
-  style: React.CSSProperties;
-};
+import { Category, ShortVideoConfig } from "../types";
+import { assets } from "../data/assets";
+import { Entity } from "../data/types";
+import { KikuAnimation } from "./shared/KikuAnimation";
+import { CorrectSceneShort } from "./short/CorrectSceneShort";
+import { SongSceneShort } from "./short/SongSceneShort";
+import { OutroSceneShort } from "./short/OutroSceneShort";
 
 type ShortVideoProps = {
-  items: LearningItem[];
-  folder: string;
-  outro: OutroConfig;
-  showHindi?: boolean;
-  factCount?: number;
+  category: Category;
+  config?: ShortVideoConfig;
 };
 
 export const ShortVideo = ({
-  items,
-  folder,
-  outro,
-  showHindi,
-  factCount=1,
+  category,
+  config = {
+    showQuestion: true,
+    showTimer: true,
+    showCorrect: true,
+    showLearning: true,
+    showSong: true,
+    showOutro: true,
+  },
 }: ShortVideoProps) => {
-  const shortTimingEnglish = factCount === 1 ? SHORT_TIMINGS_ENGLISH_1_FACT : SHORT_TIMINGS_ENGLISH_2_FACT;
-  const shortTimingHindi = factCount === 1 ? SHORT_TIMINGS_HINDI_1_FACT : SHORT_TIMINGS_HINDI_2_FACT;
+  const { items, folder } = category;
 
-  const shortTimings = showHindi ? shortTimingHindi : shortTimingEnglish;
+  const timings = SHORT_TIMINGS;
+
+  const contentStart = 0;
+  
+  const questionDuration = config.showQuestion ? timings.QUESTION : 0;
+  const timerDuration = config.showTimer ? timings.TIMER : 0;
+  const correctDuration = config.showCorrect ? timings.CORRECT : 0;
+  
+  const getLearningDuration = (item: Entity) =>
+    config.showLearning ? item.learningFrames ?? timings.LEARNING : 0;
+  
+  const getSongDuration = (item: Entity) =>
+    config.showSong ? item.songFrames ?? 0 : 0;
+  
+  const getItemDuration = (item: Entity) =>
+    questionDuration +
+    timerDuration +
+    correctDuration +
+    getLearningDuration(item) +
+    getSongDuration(item);
+
+  // const getItemsDuration = (items: Entity[]) =>
+  //   items.reduce((total, item) => total + getItemDuration(item), 0);
+
+  const totalItemsDuration =
+    items.reduce((total, item) => total + getItemDuration(item), 0);
+
+  const outroDuration = config.showOutro ? timings.OUTRO : 0;
 
   return (
     <>
-      {/* LEARNING BG */}
-      <Sequence
-        from={0}
-      >
-        <BackgroundScene
-          image="background_short.png"
-          folder={folder}
-        />
+      {/* THUMBNAIL */}
+      <Sequence durationInFrames={1} >
+        <ThumbnailScene thumbnail={assets.shared.shortThumbnail(folder)} />
       </Sequence>
 
-      <Sequence
-        from={0}
-        durationInFrames={2}
-      >
-        <ThumbnailScene
-          thumbnail={`${folder}/thumbnail.png`}
-        />
-      </Sequence>
+      <BackgroundScene image={assets.video.backgroundShort(folder)} />
+
       {items.map((item, index) => {
-        const start = index * shortTimings.ITEM_DURATION;
+        const itemStart = items.slice(0, index).reduce(
+          (total, current) =>
+            total + getItemDuration(current), contentStart
+        );
 
         return (
           <Fragment key={item.name}>
 
-            {/* KIKU THINKING */}
-            <Sequence
-              from={start}
-              durationInFrames={shortTimings.KIKU_THINKING_DURATION}
-            >
-              <KikuThinking />
-            </Sequence>
-
             {/* QUESTION */}
-            <Sequence
-              from={start}
-              durationInFrames={shortTimings.QUESTION_DURATION}
-            >
-              <QuestionSceneShort image={item.image} folder={folder} />
-            </Sequence>
+            {config.showQuestion && (
+              <Sequence from={itemStart} durationInFrames={questionDuration}>
+                <QuestionSceneShort
+                  image={assets.entity.image(item)}
+                  folder={folder}
+                  showTimer={config.showTimer}
+                />
+              </Sequence>
+            )}
+
+            {/* KIKU THINKING */}
+            {config.showQuestion && (
+              <Sequence
+                from={itemStart}
+                durationInFrames={questionDuration + timerDuration}
+              >
+                <KikuAnimation
+                  webm={assets.shared.thinking}
+                  style={{
+                    position: "absolute",
+                    bottom: -250,
+                    right: -130,
+                    width: 600,
+                    zIndex: 100,
+                    clipPath: "inset(0 0 15px 0)",
+                  }}
+                  volume={0.70}
+                />
+              </Sequence>
+            )}
 
             {/* TIMER */}
-            <Sequence
-              from={start + shortTimings.TIMER_START_OFFSET}
-              durationInFrames={shortTimings.TIMER_DURATION}
-            >
-              <TimerSceneShort
-                image={item.image}
-                audioFile={item.praiseAudio}
-                folder={folder}
-              />
-            </Sequence>
+            {config.showTimer && (
+              <Sequence
+                from={itemStart + questionDuration}
+                durationInFrames={timerDuration}
+              >
+                <TimerSceneShort image={assets.entity.image(item)} />
+              </Sequence>
+            )}
 
-            {/* REVEAL */}
-            <Sequence
-              from={start + shortTimings.REVEAL_START_OFFSET}
-              durationInFrames={shortTimings.REVEAL_DURATION}
-            >
-              <RevealSceneShort
-                image={item.image}
-                name={item.name}
-                hindiName={item.hindiName}
-                audioFile={item.narration}
-                videoFile={item.video}
-                videoFile2={item.video2}
-                folder={folder}
-                timings={shortTimings}
-              />
+            {/* CORRECT */}
+            {config.showCorrect && (
+              <Sequence
+                from={itemStart + questionDuration + timerDuration}
+                durationInFrames={correctDuration}
+              >
+                <CorrectSceneShort
+                  image={assets.entity.image(item)}
+                  audioFile={assets.shared.praise(item.praiseAudio)}
+                />
+              </Sequence>
+            )}
+
+            {/* LEARNING */}
+            {config.showLearning && (
+              <Sequence
+                from={
+                  itemStart +
+                  questionDuration +
+                  timerDuration +
+                  correctDuration
+                }
+                durationInFrames={getLearningDuration(item)}
+              >
+                <LearningSceneShort
+                  image={assets.entity.image(item)}
+                  name={item.name}
+                  hindiName={item.hindiName}
+                  audioFile={assets.entity.narration(item)}
+                  learningFrames={item.learningFrames}
+                />
+              </Sequence>
+            )}
+
+            {/* SONG VIDEO */}
+            {config.showSong && (
+              <Sequence
+                from={
+                  itemStart +
+                  questionDuration +
+                  timerDuration +
+                  correctDuration +
+                  getLearningDuration(item)
+                }
+                durationInFrames={getSongDuration(item)}
+              >
+                <SongSceneShort
+                  itemName={{ english: item.name, hindi: item.hindiName || "" }}
+                  songFile={assets.entity.song(item)}
+                  videoFile={assets.entity.dance(item)}
+                  songFrames={item.songFrames}
+                  danceFrames={item.danceFrames}
+                  folder={folder}
+                />
             </Sequence>
+            )}
           </Fragment>
         );
       })}
 
-      {/* BACKGROUND */}
-      <Sequence
-        from={items.length * shortTimings.ITEM_DURATION}
-        durationInFrames={shortTimings.FACT_START_OFFSET}
-      >
-        <BackgroundScene image={"background_short.png"} folder={folder} />
-      </Sequence>
-
       {/* OUTRO */}
-      <Sequence
-        from={items.length * shortTimings.ITEM_DURATION}
-        durationInFrames={outro.duration}
-      >
-        <OutroSceneShort video={outro.video} style={outro.style} />
-      </Sequence>
+      {config.showOutro && (
+        <Sequence from={totalItemsDuration} durationInFrames={outroDuration}>
+          <OutroSceneShort audioFile={assets.shared.channelNameCallout} />
+        </Sequence>
+      )}
     </>
   );
 };
