@@ -12,6 +12,7 @@
 // import { VehicleLong, VehicleLongDuration } from "../videos/VehicleLong";
 // import { VehicleShort, VehicleShortDuration } from "../videos/VehicleShort";
 // import { WildAnimalLong, WildAnimalLongDuration } from "../videos/WildAnimalLong";
+import { BirdShort, BirdShortDuration } from "../videos/BirdShort";
 import { WildAnimalShort, WildAnimalShortDuration } from "../videos/WildAnimalShort";
 
 const VIDEO_CONFIG_SHORT = {
@@ -60,6 +61,15 @@ export const VIDEO_CONFIG = {
 //   width: VIDEO_CONFIG_LONG.WIDTH,
 //   height: VIDEO_CONFIG_LONG.HEIGHT,
 // };
+
+export const BirdShortConfig = {
+  id: "BirdShort",
+  component: BirdShort,
+  durationInFrames: BirdShortDuration,
+  fps: VIDEO_CONFIG_SHORT.FPS,
+  width: VIDEO_CONFIG_SHORT.WIDTH,
+  height: VIDEO_CONFIG_SHORT.HEIGHT,
+};
 
 // Body Parts
 

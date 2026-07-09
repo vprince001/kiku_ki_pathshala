@@ -32,8 +32,7 @@ export const categories = {
   },
 
   birdLong: {
-    title: "20 Bird Names",
-    entityType: "bird",
+    title: "Birds Names",
     folder: "bird_long",
     entities: [
       // "budgie",
@@ -58,6 +57,35 @@ export const categories = {
       "swan",
       "toucan",
       "woodpecker",
+    ]
+  },
+
+  birdShort: {
+    title: "Birds",
+    folder: "bird_short",
+    entities: [
+      // "budgie",
+      // "canary",
+      // "crow",
+      // "duck",
+      // "eagle",
+      // "flamingo",
+      // "hen",
+      // "hummingbird",
+      // "kingfisher",
+      // "kiwi",
+      // "lovebird",
+      // "ostrich",
+      // "owl",
+      // "parrot",
+      // "peacock",
+      // "pelican",
+      "penguin",
+      // "pigeon",
+      // "sparrow",
+      // "swan",
+      // "toucan",
+      // "woodpecker",
     ]
   },
 

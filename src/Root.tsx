@@ -1,6 +1,7 @@
 import { Composition } from "remotion";
 import "./fonts.css";
 import {
+  BirdShortConfig,
   // Animals
   // AnimalLongConfig,
 
@@ -73,9 +74,9 @@ import {
 
   // Wild Animals
   // WildAnimalLongConfig,
-  WildAnimalShortConfig,
+  // WildAnimalShortConfig,
 } from "./config";
 
 export const RemotionRoot = () => {
-  return <Composition {...WildAnimalShortConfig} />;
+  return <Composition {...BirdShortConfig} />;
 };

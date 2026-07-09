@@ -62,6 +62,16 @@ export const birds: Record<string, Entity> = {
     songFrames: 361,
   },
 
+  penguin: {
+    id: "penguin",
+    name: "Penguin",
+    hindiName: "पेंगुइन",
+    entityType: "bird",
+    learningFrames: 230,
+    factFrames: 360,
+    songFrames: 347,
+  },
+
   rooster: {
     id: "rooster",
     name: "Rooster",
