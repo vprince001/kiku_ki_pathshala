@@ -13,6 +13,7 @@
 // import { VehicleShort, VehicleShortDuration } from "../videos/VehicleShort";
 // import { WildAnimalLong, WildAnimalLongDuration } from "../videos/WildAnimalLong";
 import { BirdShort, BirdShortDuration } from "../videos/BirdShort";
+import { InsectShort, InsectShortDuration } from "../videos/InsectShort";
 import { WildAnimalShort, WildAnimalShortDuration } from "../videos/WildAnimalShort";
 
 const VIDEO_CONFIG_SHORT = {
@@ -226,14 +227,14 @@ export const BirdShortConfig = {
 //   height: VIDEO_CONFIG_LONG.HEIGHT,
 // };
 
-// export const InsectShortConfig = {
-//   id: "InsectShort",
-//   component: InsectShort,
-//   durationInFrames: InsectShortDuration,
-//   fps: VIDEO_CONFIG_SHORT.FPS,
-//   width: VIDEO_CONFIG_SHORT.WIDTH,
-//   height: VIDEO_CONFIG_SHORT.HEIGHT,
-// };
+export const InsectShortConfig = {
+  id: "InsectShort",
+  component: InsectShort,
+  durationInFrames: InsectShortDuration,
+  fps: VIDEO_CONFIG_SHORT.FPS,
+  width: VIDEO_CONFIG_SHORT.WIDTH,
+  height: VIDEO_CONFIG_SHORT.HEIGHT,
+};
 
 // export const InsectReelConfig = {
 //   id: "InsectReel",

@@ -1,5 +1,7 @@
 import { Entity } from "../types";
 
+// learningFrames needs to be updated for penguin.
+
 export const birds: Record<string, Entity> = {
   budgie: {
     id: "budgie",

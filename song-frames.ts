@@ -3,7 +3,7 @@ import path from "path";
 import { execSync } from "child_process";
 
 const FPS = 30;
-const ROOT = "./public/entities";
+const ROOT = "./public/entities/insect";
 
 function getSongFrames(songPath: string) {
   const duration = Number(
@@ -26,13 +26,13 @@ function scan(dir: string) {
       continue;
     }
 
-    // if (entry.name !== "dance.mp4") {
-    //   continue;
-    // }
-
-    if (entry.name !== "song.mp3") {
+    if (entry.name !== "dance.mp4") {
       continue;
     }
+
+    // if (entry.name !== "song.mp3") {
+    //   continue;
+    // }
 
     const entity = path.basename(path.dirname(fullPath));
     const frames = getSongFrames(fullPath);

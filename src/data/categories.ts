@@ -167,7 +167,6 @@ export const categories = {
 
   insectLong: {
     title: "Insects",
-    entityType: "insect",
     folder: "insect_long",
     entities: [
       "ant",
@@ -190,6 +189,33 @@ export const categories = {
       "termite",
       "wasp",
       "weevil",
+    ]
+  },
+
+  insectShort: {
+    title: "Insects",
+    folder: "insect_short",
+    entities: [
+      "ant",
+      // "bee",
+      // "beetle",
+      // "butterfly",
+      // "caterpillar",
+      // "cockroach",
+      // "cricket",
+      // "dragonfly",
+      // "firefly",
+      // "grasshopper",
+      // "housefly",
+      // "ladybug",
+      // "mosquito",
+      // "moth",
+      // "prayingMantis",
+      // "spider",
+      // "stagBeetle",
+      // "termite",
+      // "wasp",
+      // "weevil",
     ]
   },
 
