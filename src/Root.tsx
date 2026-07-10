@@ -19,6 +19,9 @@ import {
   // Community Helpers
   // CommunityHelperLongConfig,
 
+  // Construction Vehicles
+  ConstructionVehicleLongConfig,
+
   // Dinosaurs
   // DinosaursLongConfig,
 
@@ -42,7 +45,7 @@ import {
 
   // Insects
   // InsectLongConfig,
-  InsectShortConfig,
+  // InsectShortConfig,
   // InsectReelConfig,
 
   // Pet Animals
@@ -78,5 +81,5 @@ import {
 } from "./config";
 
 export const RemotionRoot = () => {
-  return <Composition {...InsectShortConfig} />;
+  return <Composition {...ConstructionVehicleLongConfig} />;
 };

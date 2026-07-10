@@ -13,6 +13,7 @@
 // import { VehicleShort, VehicleShortDuration } from "../videos/VehicleShort";
 // import { WildAnimalLong, WildAnimalLongDuration } from "../videos/WildAnimalLong";
 import { BirdShort, BirdShortDuration } from "../videos/BirdShort";
+import { ConstructionVehicleLong, ConstructionVehicleLongDuration } from "../videos/ConstructionVehicleLong";
 import { InsectShort, InsectShortDuration } from "../videos/InsectShort";
 import { WildAnimalShort, WildAnimalShortDuration } from "../videos/WildAnimalShort";
 
@@ -122,6 +123,17 @@ export const BirdShortConfig = {
 //   width: VIDEO_CONFIG_LONG.WIDTH,
 //   height: VIDEO_CONFIG_LONG.HEIGHT,
 // };
+
+// Construction Vehicles
+
+export const ConstructionVehicleLongConfig = {
+  id: "ConstructionVehicleLong",
+  component: ConstructionVehicleLong,
+  durationInFrames: ConstructionVehicleLongDuration,
+  fps: VIDEO_CONFIG_LONG.FPS,
+  width: VIDEO_CONFIG_LONG.WIDTH,
+  height: VIDEO_CONFIG_LONG.HEIGHT,
+};
 
 // Dinosaurs
 

@@ -89,6 +89,24 @@ export const categories = {
     ]
   },
 
+  constructionVehicleLong: {
+    title: "Construction Vehicles",
+    entityType: "vehicle",
+    folder: "construction_vehicle_long",
+    entities: [
+      "bulldozer",
+      "crane",
+      "dumpTruck",
+      "excavator",
+      "forklift",
+      "gradator",
+      "loader",
+      "mixer",
+      "paver",
+      "roadRoller",
+    ]
+  },
+
   dinosaurs: {
     title: "10 Wild Animal Names",
     entityType: "animal",
