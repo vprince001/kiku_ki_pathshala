@@ -69,7 +69,7 @@ export const categories = {
       // "crow",
       // "duck",
       // "eagle",
-      // "flamingo",
+      // "flamingo", // posted
       // "hen",
       // "hummingbird",
       // "kingfisher",
@@ -78,9 +78,9 @@ export const categories = {
       // "ostrich",
       // "owl",
       // "parrot",
-      // "peacock",
+      "peacock", // posted
       // "pelican",
-      "penguin",
+      // "penguin", // posted
       // "pigeon",
       // "sparrow",
       // "swan",
@@ -94,16 +94,26 @@ export const categories = {
     entityType: "vehicle",
     folder: "construction_vehicle_long",
     entities: [
+      "asphaltPaver",
+      "backhoeLoader",
       "bulldozer",
+      "cementMixer",
+      "concretePumpTruck",
       "crane",
+      "crawlerCrane",
+      "drillingRig",
       "dumpTruck",
       "excavator",
       "forklift",
-      "gradator",
-      "loader",
-      "mixer",
-      "paver",
+      "grader",
+      "mobileCrane",
       "roadRoller",
+      "skidSteerLoader",
+      "snowPlow",
+      "telehandler",
+      "towerCrane",
+      "trenchDigger",
+      "wheelLoader",
     ]
   },
 
@@ -140,6 +150,33 @@ export const categories = {
       "duck",
       "rooster",
       "turkey",
+    ]
+  },
+
+  flyingBirdLong: {
+    title: "Flying Birds",
+    folder: "flying_bird_long",
+    entities: [
+      "budgie",
+      "canary",
+      "crow",
+      "dove",
+      "duck",
+      "eagle",
+      "flamingo",
+      "hummingbird",
+      "kingfisher",
+      "lovebird",
+      "owl",
+      "parrot",
+      "peacock",
+      "pelican",
+      "pigeon",
+      "sparrow",
+      "swan",
+      "toucan",
+      "turkey",
+      "woodpecker",
     ]
   },
 
@@ -214,7 +251,7 @@ export const categories = {
     title: "Insects",
     folder: "insect_short",
     entities: [
-      "ant",
+      // "ant", // posted
       // "bee",
       // "beetle",
       // "butterfly",
@@ -229,7 +266,7 @@ export const categories = {
       // "mosquito",
       // "moth",
       // "prayingMantis",
-      // "spider",
+      "spider", // posted
       // "stagBeetle",
       // "termite",
       // "wasp",
@@ -353,7 +390,6 @@ export const categories = {
 
   wildAnimalLong: {
     title: "Wild Animals",
-    entityType: "animal",
     folder: "wild_animal_long",
     entities: [
       "bear",
@@ -381,8 +417,38 @@ export const categories = {
 
   wildAnimalShort: {
     title: "Wild Animals",
-    entityType: "animal",
     folder: "wild_animal_short",
-    entities: ["bear"]
+    entities: [
+      // "bear", // posted
+      // "panda", // posted
+      "kangaroo",
+    ]
+  },
+
+  zooAnimalLong: {
+    title: "Zoo Animals",
+    folder: "zoo_animal_long",
+    entities: [
+      "bear",
+      "camel",
+      "cheetah",
+      "deer",
+      "elephant",
+      "fox",
+      "giraffe",
+      "gorilla",
+      "hippopotamus",
+      "hyena",
+      "kangaroo",
+      "leopard",
+      "lion",
+      "monkey",
+      "panda",
+      "rhinoceros",
+      "tiger",
+      "wolf",
+      "yak",
+      "zebra",
+    ]
   },
 };

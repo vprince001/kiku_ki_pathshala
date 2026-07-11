@@ -9,13 +9,11 @@ import { assets } from "../../data/assets";
 type CompletionSceneProps = {
     audioFile: string;
     musicFile?: string;
-    folder: string;
 };
 
 export const CompletionScene = ({
     audioFile,
     musicFile,
-    folder,
 }: CompletionSceneProps) => {
     return (
         <>

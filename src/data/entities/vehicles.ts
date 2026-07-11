@@ -22,23 +22,23 @@ export const vehicles: Record<string, Entity> = {
   },
 
   asphaltPaver: {
-    id: "asphalt-paver",
+    id: "asphalt_paver",
     name: "Asphalt Paver",
     hindiName: "डामर बिछाने की मशीन",
     entityType: "vehicle",
-    learningFrames: 240,
+    learningFrames: 265,
     factFrames: 360,
-    songFrames: 357,
+    songFrames: 310,
   },
 
   backhoeLoader: {
-    id: "backhoe-loader",
+    id: "backhoe_loader",
     name: "Backhoe Loader",
     hindiName: "बैकहो लोडर",
     entityType: "vehicle",
-    learningFrames: 240,
+    learningFrames: 305,
     factFrames: 360,
-    songFrames: 357,
+    songFrames: 295,
   },
 
   bicycle: {
@@ -66,9 +66,9 @@ export const vehicles: Record<string, Entity> = {
     name: "Bulldozer",
     hindiName: "बुलडोज़र",
     entityType: "vehicle",
-    learningFrames: 240,
+    learningFrames: 260,
     factFrames: 360,
-    songFrames: 357,
+    songFrames: 306,
   },
 
   bus: {
@@ -92,53 +92,63 @@ export const vehicles: Record<string, Entity> = {
   },
 
   cementMixer: {
-    id: "cement-mixer",
+    id: "cement_mixer",
     name: "Cement Mixer",
     hindiName: "सीमेंट मिक्सर",
     entityType: "vehicle",
-    learningFrames: 240,
+    learningFrames: 275,
     factFrames: 360,
-    songFrames: 357,
+    songFrames: 291,
   },
 
   concretePumpTruck: {
-    id: "concrete-pump-truck",
+    id: "concrete_pump_truck",
     name: "Concrete Pump Truck",
     hindiName: "कंक्रीट पंप ट्रक",
     entityType: "vehicle",
-    learningFrames: 240,
+    learningFrames: 265,
     factFrames: 360,
-    songFrames: 357,
+    songFrames: 302,
+  },
+
+  crane: {
+    id: "crane",
+    name: "Crane",
+    hindiName: "क्रेन",
+    entityType: "vehicle",
+    learningFrames: 265,
+    factFrames: 360,
+    songFrames: 300,
   },
 
   crawlerCrane: {
-    id: "crawler-crane",
+    id: "crawler_crane",
     name: "Crawler Crane",
     hindiName: "क्रॉलर क्रेन",
     entityType: "vehicle",
-    learningFrames: 240,
+    learningFrames: 270,
     factFrames: 360,
-    songFrames: 357,
+    songFrames: 316,
   },
 
   drillingRig: {
-    id: "drilling-rig",
+    id: "drilling_rig",
     name: "Drilling Rig",
     hindiName: "ड्रिलिंग रिग",
     entityType: "vehicle",
-    learningFrames: 240,
+    learningFrames: 245,
     factFrames: 360,
-    songFrames: 357,
+    songFrames: 293,
   },
 
   dumpTruck: {
-    id: "dump-truck",
+    id: "dump_truck",
     name: "Dump Truck",
     hindiName: "डंप ट्रक",
     entityType: "vehicle",
-    learningFrames: 240,
+    learningFrames: 245,
     factFrames: 360,
-    songFrames: 357,
+    songFrames: 304,
   },
 
   excavator: {
@@ -146,9 +156,9 @@ export const vehicles: Record<string, Entity> = {
     name: "Excavator",
     hindiName: "एक्सकेवेटर",
     entityType: "vehicle",
-    learningFrames: 240,
+    learningFrames: 285,
     factFrames: 360,
-    songFrames: 357,
+    songFrames: 260,
   },
 
   fireTruck: {
@@ -166,9 +176,9 @@ export const vehicles: Record<string, Entity> = {
     name: "Forklift",
     hindiName: "फोर्कलिफ्ट",
     entityType: "vehicle",
-    learningFrames: 240,
+    learningFrames: 245,
     factFrames: 360,
-    songFrames: 357,
+    songFrames: 296,
   },
 
   grader: {
@@ -176,9 +186,9 @@ export const vehicles: Record<string, Entity> = {
     name: "Grader",
     hindiName: "ग्रेडर",
     entityType: "vehicle",
-    learningFrames: 240,
+    learningFrames: 245,
     factFrames: 360,
-    songFrames: 357,
+    songFrames: 295,
   },
 
   helicopter: {
@@ -212,13 +222,13 @@ export const vehicles: Record<string, Entity> = {
   },
 
   mobileCrane: {
-    id: "mobile-crane",
+    id: "mobile_crane",
     name: "Mobile Crane",
     hindiName: "मोबाइल क्रेन",
     entityType: "vehicle",
-    learningFrames: 240,
+    learningFrames: 230,
     factFrames: 360,
-    songFrames: 357,
+    songFrames: 298,
   },
 
   motorcycle: {
@@ -242,13 +252,13 @@ export const vehicles: Record<string, Entity> = {
   },
 
   roadRoller: {
-    id: "road-roller",
+    id: "road_roller",
     name: "Road Roller",
     hindiName: "रोड रोलर",
     entityType: "vehicle",
-    learningFrames: 240,
+    learningFrames: 250,
     factFrames: 360,
-    songFrames: 357,
+    songFrames: 305,
   },
 
   rocket: {
@@ -282,23 +292,23 @@ export const vehicles: Record<string, Entity> = {
   },
 
   skidSteerLoader: {
-    id: "skid-steer-loader",
+    id: "skid_steer_loader",
     name: "Skid Steer Loader",
     hindiName: "स्किड स्टीयर लोडर",
     entityType: "vehicle",
-    learningFrames: 240,
+    learningFrames: 265,
     factFrames: 360,
-    songFrames: 357,
+    songFrames: 305,
   },
 
   snowPlow: {
-    id: "snow-plow",
+    id: "snow_plow",
     name: "Snow Plow",
     hindiName: "स्नो प्लाउ",
     entityType: "vehicle",
-    learningFrames: 240,
+    learningFrames: 255,
     factFrames: 360,
-    songFrames: 357,
+    songFrames: 345,
   },
 
   taxi: {
@@ -316,19 +326,19 @@ export const vehicles: Record<string, Entity> = {
     name: "Telehandler",
     hindiName: "टेलीहैंडलर",
     entityType: "vehicle",
-    learningFrames: 240,
+    learningFrames: 250,
     factFrames: 360,
-    songFrames: 357,
+    songFrames: 300,
   },
 
   towerCrane: {
-    id: "tower-crane",
+    id: "tower_crane",
     name: "Tower Crane",
     hindiName: "टॉवर क्रेन",
     entityType: "vehicle",
-    learningFrames: 240,
+    learningFrames: 245,
     factFrames: 360,
-    songFrames: 357,
+    songFrames: 297,
   },
 
   tractor: {
@@ -352,13 +362,13 @@ export const vehicles: Record<string, Entity> = {
   },
 
   trenchDigger: {
-    id: "trench-digger",
+    id: "trench_digger",
     name: "Trench Digger",
     hindiName: "ट्रेंच डिगर",
     entityType: "vehicle",
-    learningFrames: 240,
+    learningFrames: 235,
     factFrames: 360,
-    songFrames: 357,
+    songFrames: 296,
   },
 
   truck: {
@@ -382,13 +392,13 @@ export const vehicles: Record<string, Entity> = {
   },
 
   wheelLoader: {
-    id: "wheel-loader",
+    id: "wheel_loader",
     name: "Wheel Loader",
     hindiName: "व्हील लोडर",
     entityType: "vehicle",
     learningFrames: 240,
     factFrames: 360,
-    songFrames: 357,
+    songFrames: 302,
   },
 
 };

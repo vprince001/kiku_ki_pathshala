@@ -306,7 +306,6 @@ const splitThreeWords = (words: string[]): string[] => {
 
 export const splitEnglishWord = (englishWord: string): string[] => {
   const words = englishWord.trim().split(/\s+/);
-  console.log("words", words);
 
   if (words.length === 1) {
     return words;
@@ -314,13 +313,9 @@ export const splitEnglishWord = (englishWord: string): string[] => {
 
   if (words.length === 2) {
     const combined = words.join(" ");
-    console.log("combined", combined, [combined]);
-    console.log("measureWidth(combined)", measureWidth(combined));
-
     const result = measureWidth(combined) <= MAX_SINGLE_LINE_WIDTH
       ? [combined]
       : words;
-      console.log("result", result)
     return result
   }
 

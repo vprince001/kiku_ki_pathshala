@@ -256,7 +256,6 @@ export const LongVideo = ({
                   items={items.slice(milestone - 5, milestone)}
                   topicName={title}
                   musicFile={assets.shared.revealMusic}
-                  folder={folder}
                 />
               </Sequence>
             );
@@ -272,7 +271,6 @@ export const LongVideo = ({
           <CompletionScene
             audioFile={assets.video.completionAudio(folder)}
             musicFile={assets.shared.revealMusic}
-            folder={folder}
           />
         </Sequence>
       )}

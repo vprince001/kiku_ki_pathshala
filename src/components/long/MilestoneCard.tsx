@@ -1,18 +1,17 @@
 import { Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { splitEnglishWord } from "../../helpers";
 
 type MilestoneCardProps = {
   item: {
     name: string;
     image: string;
   };
-  folder: string;
   style: React.CSSProperties;
   revealFrame: number;
 };
 
 export const MilestoneCard = ({
   item,
-  folder,
   revealFrame,
   style,
 }: MilestoneCardProps) => {
@@ -66,6 +65,17 @@ export const MilestoneCard = ({
       extrapolateLeft: "clamp",
       extrapolateRight: "clamp",
     }
+  );
+
+  const lines = splitEnglishWord(item.name);
+
+  const longestLine = Math.max(
+    ...lines.map((l) => l.length)
+  );
+
+  const fontSize = Math.min(
+    34,
+    270 / longestLine
   );
 
   return (
@@ -161,7 +171,7 @@ export const MilestoneCard = ({
           position: "absolute",
           bottom: 4,
           width: "96%",
-          height: 50,
+          height: lines.length === 1 ? 50 : 60,
           left: 6,
           borderBottomLeftRadius: 28,
           borderBottomRightRadius: 28,
@@ -170,17 +180,23 @@ export const MilestoneCard = ({
             "linear-gradient(180deg,#4F8CFF,#2C67E8)",
 
           display: "flex",
+          flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
 
           color: "white",
-          fontSize: 34,
+          fontSize: item.name.length > 14 ? fontSize : 34,
+          lineHeight: 1.1,
           fontWeight: 900,
           textShadow: "0 2px 4px rgba(0,0,0,.25)",
           opacity: nameOpacity,
         }}
       >
-        {item.name}
+        {lines.map((line) => (
+          <div key={line}>
+            {line}
+          </div>
+        ))}
       </div>
 
       {/* Top Gold Star */}

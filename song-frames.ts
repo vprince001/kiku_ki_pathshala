@@ -3,7 +3,7 @@ import path from "path";
 import { execSync } from "child_process";
 
 const FPS = 30;
-const ROOT = "./public/entities/insect";
+const ROOT = "./public/entities/animal";
 
 function getSongFrames(songPath: string) {
   const duration = Number(
@@ -26,7 +26,7 @@ function scan(dir: string) {
       continue;
     }
 
-    if (entry.name !== "dance.mp4") {
+    if (entry.name !== "kangaroo_dance.mp4") {
       continue;
     }
 

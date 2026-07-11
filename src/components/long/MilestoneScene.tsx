@@ -14,12 +14,12 @@ import { Confetti } from "../shared/Confetti";
 import { Entity } from "../../data/types";
 import { assets } from "../../data/assets";
 import { KikuAnimation } from "../shared/KikuAnimation";
+import { splitEnglishWord } from "../../helpers";
 
 type MilestoneSceneProps = {
     items: Entity[];
     topicName: string,
     musicFile?: string;
-    folder: string;
 };
 
 const CARD_WIDTH = 330;
@@ -37,7 +37,6 @@ export const MilestoneScene = ({
     items,
     topicName,
     musicFile,
-    folder,
 }: MilestoneSceneProps) => {
     const INITIAL_DELAY = 100;
     const REVEAL_GAP = 45;
@@ -73,6 +72,18 @@ export const MilestoneScene = ({
             extrapolateLeft: "clamp",
             extrapolateRight: "clamp",
         }
+    );
+
+    const topicLines = splitEnglishWord(topicName);
+    console.log("topicLines", topicLines);
+
+    const longestLine = Math.max(
+        ...topicLines.map((line) => line.length)
+    );
+
+    const topicFontSize = Math.min(
+        54,
+        850 / longestLine
     );
 
     return (
@@ -141,22 +152,27 @@ export const MilestoneScene = ({
             >
                 <div
                     style={{
-                        fontSize: 54,
+                        fontSize: topicFontSize,
                         fontWeight: "bold",
-
                         color: "#704214",
-
                         letterSpacing: 1,
-
                         textAlign: "center",
+                        lineHeight: 0.9,
+
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "center",
 
                         textShadow: `
                             0 1px 0 rgba(255,255,255,.5),
                             0 2px 3px rgba(0,0,0,.12)
-                        `
+                        `,
                     }}
                 >
-                    {topicName}
+                    {topicLines.map((line) => (
+                        <div key={line}>{line}</div>
+                    ))}
                 </div>
             </div>
 
@@ -179,7 +195,6 @@ export const MilestoneScene = ({
                                 name: item.name,
                                 image: assets.entity.image(item)
                             }}
-                            folder={folder}
                             revealFrame={revealFrame}
                             style={{
                                 position: "absolute",

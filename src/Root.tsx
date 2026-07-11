@@ -6,7 +6,7 @@ import {
 
   // Birds
   // BirdLongConfig,
-  // BirdShortConfig,
+  BirdShortConfig,
 
   // Body Parts
   // BodyPartLongConfig,
@@ -20,7 +20,7 @@ import {
   // CommunityHelperLongConfig,
 
   // Construction Vehicles
-  ConstructionVehicleLongConfig,
+  // ConstructionVehicleLongConfig,
 
   // Dinosaurs
   // DinosaursLongConfig,
@@ -30,9 +30,12 @@ import {
   // FarmAnimalShortConfig,
 
   // Flowers
+  // FlowerLongConfig,
   // FlowerShortConfig,
   // FlowerReelConfig,
-  // FlowerLongConfig,
+
+  // Flying Birds
+  // FlyingBirdLongConfig,
 
   // Food Items
   // FoodItemsLongConfig,
@@ -78,8 +81,11 @@ import {
   // Wild Animals
   // WildAnimalLongConfig,
   // WildAnimalShortConfig,
+
+  // Zoo Animals
+  // ZooAnimalLongConfig,
 } from "./config";
 
 export const RemotionRoot = () => {
-  return <Composition {...ConstructionVehicleLongConfig} />;
+  return <Composition {...BirdShortConfig} />;
 };

@@ -1,7 +1,7 @@
 import { LongVideo } from "../components/LongVideo";
 import { getCategory, getLongDuration } from "../helpers";
 
-const category = getCategory("constructionVehicleLong", "20-Construction-Vehicle-Long-v3");
+const category = getCategory("flyingBirdLong", "20-Flying-Bird-Names-v5");
 
 export const VIDEO_CONFIG = {
   showIntro: false,
@@ -10,6 +10,7 @@ export const VIDEO_CONFIG = {
   showTimer: true,
   showCorrect: false,
   showLearning: true,
+  showFact: false,
   showSong: true,
   showMilestone: true,
   showCompletion: false,
@@ -18,9 +19,9 @@ export const VIDEO_CONFIG = {
 };
 
 console.log(category.items);
-export const ConstructionVehicleLongDuration =
+export const FlyingBirdLongDuration =
   getLongDuration(category.items, VIDEO_CONFIG);
 
-export const ConstructionVehicleLong = () => (
+export const FlyingBirdLong = () => (
   <LongVideo category={category} config={VIDEO_CONFIG} />
 );

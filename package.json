@@ -31,7 +31,8 @@
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc",
-    "crop-images": "npx tsx crop-images.ts"
+    "crop-images": "npx tsx crop-images.ts",
+    "song-frames": "npx tsx song-frames.ts"
   },
   "sideEffects": [
     "*.css"

@@ -16,7 +16,7 @@ type LearningBoardProps = {
 
 export const LearningBoard = ({
   englishWord,
-  hindiWord,
+  hindiWord = "",
   englishScale,
   englishOpacity,
   hindiScale,
@@ -47,8 +47,8 @@ export const LearningBoard = ({
 
   const hindiFontSize =
     hindiLines.length === 1
-      ? Math.min(120, 900 / longestHindiLine)
-      : Math.min(120, 1300 / longestHindiLine);
+      ? Math.min(100, 1550 / longestHindiLine)
+      : Math.min(140, 1500 / longestHindiLine);
 
   return (
     <div

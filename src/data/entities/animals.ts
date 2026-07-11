@@ -225,6 +225,7 @@ export const animals: Record<string, Entity> = {
     learningFrames: 255,
     factFrames: 360,
     songFrames: 545,
+    danceFrames: 535,
   },
 
   kangaroo: {
@@ -235,6 +236,7 @@ export const animals: Record<string, Entity> = {
     learningFrames: 255,
     factFrames: 360,
     songFrames: 614,
+    danceFrames: 635,
   },
 
   leopard: {
